@@ -1,0 +1,1675 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"red",
+				"redirecitngUrlMap (obj)"
+			],
+			[
+				"req",
+				"require"
+			],
+			[
+				"campai",
+				"campaignId"
+			],
+			[
+				"sendMan",
+				"senderManager"
+			],
+			[
+				"htm",
+				"htmlContent"
+			],
+			[
+				"aft",
+				"aftereach	After Each"
+			],
+			[
+				"uniqueI",
+				"uniqueId (obj)"
+			],
+			[
+				"re",
+				"redirectUrl (?)"
+			],
+			[
+				"send",
+				"sendMessages"
+			],
+			[
+				"se",
+				"sendMessages"
+			],
+			[
+				"_ad",
+				"_addOpenRateTracking (fn)"
+			],
+			[
+				"_",
+				"_addUnsubscribeLink (fn)"
+			],
+			[
+				"_a",
+				"_addUrlTracking (fn)"
+			],
+			[
+				"uniqueIdAsString",
+				"uniqueIdAsStringArray ([])"
+			],
+			[
+				"uni",
+				"uniqueIdAsString (?)"
+			],
+			[
+				"cre",
+				"createNewEntry"
+			],
+			[
+				"c",
+				"createUniqueId"
+			],
+			[
+				"lin",
+				"linkedText"
+			],
+			[
+				"ht",
+				"htmlContent"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
+				"h",
+				"htmlContent"
+			],
+			[
+				"f",
+				"f	Anonymous Function"
+			],
+			[
+				"Ema",
+				"EmailStatistic"
+			],
+			[
+				"s",
+				"success"
+			],
+			[
+				"i",
+				"it	It"
+			],
+			[
+				"S",
+				"Subscriber"
+			],
+			[
+				"model",
+				"models"
+			],
+			[
+				"unsub",
+				"unsubscribed"
+			],
+			[
+				"sh",
+				"should.equal"
+			],
+			[
+				"des",
+				"describe	Describe"
+			],
+			[
+				"clic",
+				"clickedUrl"
+			],
+			[
+				"link",
+				"linkClicked"
+			],
+			[
+				"it",
+				"it	it() testing"
+			],
+			[
+				"de",
+				"desc	describe"
+			],
+			[
+				"desc",
+				"desc	describe"
+			],
+			[
+				"su",
+				"subscriber"
+			],
+			[
+				"cam",
+				"campaign"
+			],
+			[
+				"ca",
+				"campaignId"
+			],
+			[
+				"campa",
+				"campaigns"
+			],
+			[
+				"open",
+				"opened"
+			],
+			[
+				"e",
+				"email"
+			],
+			[
+				"new",
+				"newSubscriber"
+			],
+			[
+				"_fi",
+				"_findById"
+			],
+			[
+				"_find",
+				"_findUrlById"
+			],
+			[
+				"ne",
+				"newEntry"
+			],
+			[
+				"redirectTa",
+				"redirectingTable"
+			],
+			[
+				"crea",
+				"_createNewEntry"
+			],
+			[
+				"redirect",
+				"redirectUrl"
+			],
+			[
+				"sender",
+				"senderManager"
+			],
+			[
+				"sen",
+				"sender"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"fo",
+				"for	for (…) {…} (Improved Native For-Loop)"
+			],
+			[
+				"pl",
+				"planedSendDate"
+			],
+			[
+				"con",
+				"console"
+			],
+			[
+				"Sch",
+				"ScheduledMessage"
+			],
+			[
+				"tr",
+				"translations"
+			],
+			[
+				"co",
+				"count"
+			],
+			[
+				"la",
+				"languageColumn"
+			],
+			[
+				"col",
+				"column"
+			],
+			[
+				"langue",
+				"language"
+			],
+			[
+				"read",
+				"readInProperties"
+			],
+			[
+				"pu",
+				"public"
+			],
+			[
+				"column",
+				"columnKey"
+			],
+			[
+				"ex",
+				"excel"
+			],
+			[
+				"in",
+				"inputSource"
+			],
+			[
+				"te",
+				"text"
+			],
+			[
+				"ch",
+				"$scope.charts"
+			],
+			[
+				"$s",
+				"$scope"
+			],
+			[
+				"st",
+				"stackedBarCharts"
+			],
+			[
+				"li",
+				"lineChart"
+			],
+			[
+				"bu",
+				"bugsFor36"
+			],
+			[
+				"bugs",
+				"bugsFound"
+			],
+			[
+				"enjoy",
+				"enjoyWork"
+			],
+			[
+				"ser",
+				"service"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "app/routes/redirectingUrls.js",
+			"settings":
+			{
+				"buffer_size": 1536,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "var mongoose = require('mongoose');\nvar Schema = require('mongoose').Schema;\nvar _ = require('lodash');\n\nvar RedirectingTable = function() {\n	var redirectingTableSchema = new Schema({\n		email: String,\n		url: String,\n		campaignId: String\n	});\n\n	var _model = mongoose.model('RedirectingTable', redirectingTableSchema);\n\n	var _findById = function(id, cb) {\n		_model.findOne({\n			_id: id\n		}, function(err, result) {\n			console.log(\"How\" + result);\n			cb(err, result);\n		});\n	};\n\n	var _findUrlById = function(id, cb) {\n		_findById(id, function(err, result) {\n			console.log(\"How2\" + result);\n			cb(result.url);\n		});\n	};\n\n	var _createNewEntry = function(data, cb) {\n		//var newEntry = new _model(data);\n		if (!(data._id == null))  \n			data._id = _.isFunction(data._id) ? data._id() : data._id;		\n		_model.create(data, cb);\n	};\n\n	return {\n		findById: _findById,\n		findUrlById: _findUrlById,\n		createNewEntry: _createNewEntry,\n		model: _model\n	}\n}();\n\nmodule.exports = RedirectingTable;",
+			"file": "app/models/redirectingTable.js",
+			"file_size": 1022,
+			"file_write_time": 130656645182694897,
+			"settings":
+			{
+				"buffer_size": 980,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/models/subscriber.js",
+			"settings":
+			{
+				"buffer_size": 4283,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/mailStatisticWraper.js",
+			"settings":
+			{
+				"buffer_size": 3899,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/scheduleMessages.js",
+			"settings":
+			{
+				"buffer_size": 1381,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/models/scheduledMessage.js",
+			"settings":
+			{
+				"buffer_size": 540,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/sendManager.js",
+			"settings":
+			{
+				"buffer_size": 721,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/test/mailStatisticWraperTest.js",
+			"settings":
+			{
+				"buffer_size": 4407,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/sendService.js",
+			"settings":
+			{
+				"buffer_size": 887,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/emailStatistic.js",
+			"settings":
+			{
+				"buffer_size": 2088,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "config/env/test.js",
+			"settings":
+			{
+				"buffer_size": 995,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "config/env/all.js",
+			"settings":
+			{
+				"buffer_size": 339,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "config/env/development.js",
+			"settings":
+			{
+				"buffer_size": 349,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "server.js",
+			"settings":
+			{
+				"buffer_size": 1094,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/User/mocha.sublime-build",
+	"command_palette":
+	{
+		"height": 311.0,
+		"selected_items":
+		[
+			[
+				"for",
+				"Format: Javascript"
+			],
+			[
+				"fo",
+				"Format: Javascript"
+			],
+			[
+				"form",
+				"Format: Javascript"
+			],
+			[
+				"f",
+				"Format: Javascript"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Advanced Install Package"
+			],
+			[
+				"forma",
+				"Format: Javascript"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"jum",
+				"TernJS: Jump to definition"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"rem",
+				"Package Control: Remove Package"
+			],
+			[
+				"jump",
+				"TernJS: Jump to definition"
+			],
+			[
+				"j",
+				"TernJS: Jump to definition"
+			],
+			[
+				"renema",
+				"TernJS: Rename variable"
+			],
+			[
+				"rene",
+				"TernJS: Rename variable"
+			],
+			[
+				"packe",
+				"Package Control: Remove Package"
+			],
+			[
+				"instll",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"pa",
+				"Package Control: Install Package"
+			],
+			[
+				"previe",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"preb",
+				"Markdown Preview: Export HTML in Sublime Text"
+			],
+			[
+				"mark",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"mar",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"line",
+				"Sort Lines (Case Sensitive)"
+			],
+			[
+				"go",
+				"Set Syntax: Go"
+			]
+		],
+		"width": 416.0
+	},
+	"console":
+	{
+		"height": 323.0,
+		"history":
+		[
+			"print (sys.version)",
+			"import sys",
+			"print (sys.version)",
+			"import urllib.request,os,hashlib; h = '2deb499853c4371624f5a07e27c334aa' + 'bf8c4e67d14fb0525ba4f89698a6d7e1'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"view.encoding()"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/git-views/efektjow/campaign_sender",
+		"/C/git-views/efektjow/campaign_sender/app",
+		"/C/git-views/efektjow/campaign_sender/config",
+		"/C/git-views/efektjow/campaign_sender/config/env"
+	],
+	"file_history":
+	[
+		"/C/git-views/efektjow/campaign_sender/node_modules/glob/node_modules/once/node_modules/wrappy/wrappy.js",
+		"/C/git-views/efektjow/campaign_sender/node_modules/glob/node_modules/inflight/node_modules/wrappy/wrappy.js",
+		"/C/git-views/efektjow/campaign_sender/node_modules/cheerio/node_modules/htmlparser2/lib/WritableStream.js",
+		"/C/git-views/efektjow/campaign_sender/node_modules/mongoose/website.js",
+		"/C/git-views/efektjow/campaign_sender/app/test/scheduleMessagesTest.js",
+		"/C/git-views/efektjow/campaign_sender/app/scheduleMessages.js",
+		"/C/git-views/efektjow/campaign_sender/app/mailStatisticWraper.js",
+		"/C/git-views/efektjow/campaign_sender/app/controllers/sendCampaign.js",
+		"/C/git-views/efektjow/campaign_sender/config/express.js",
+		"/C/git-views/efektjow/campaign_sender/app/models/redirectingTable.js",
+		"/C/git-views/efektjow/campaign_sender/node_modules/rewire/test/testModules/moduleA.js",
+		"/C/git-views/efektjow/campaign_sender/Makefile",
+		"/C/git-views/efektjow/campaign_sender/app/efektjow.js",
+		"/C/git-views/efektjow/campaign_sender/app/test/sendServiceTest.js",
+		"/C/git-views/efektjow/campaign_sender/app/sendService.js",
+		"/C/git-views/efektjow/campaign_sender/campaign_sender.sublime-project",
+		"/C/git-views/efektjow/campaign_sender/app/models/scheduledMessage.js",
+		"/C/git-views/efektjow/campaign_sender/node_modules/body-parser/node_modules/iconv-lite/encodings/tables/cp936.json",
+		"/C/git-views/efektjow/campaign_sender/node_modules/cheerio/node_modules/htmlparser2/test/Events/09-attributes.json",
+		"/C/git-views/efektjow/campaign_sender/app/emailStatistic.js",
+		"/C/git-views/efektjow/campaign_sender/app/test/sendManagerTest.js",
+		"/C/git-views/efektjow/campaign_sender/app/sendManager.js",
+		"/C/git-views/efektjow/campaign_sender/config/config.js",
+		"/C/git-views/efektjow/campaign_sender/config/env/development.js",
+		"/C/git-views/efektjow/campaign_sender/app/test/subscriebersTest.js",
+		"/C/git-views/efektjow/campaign_sender/config/init.js",
+		"/C/git-views/efektjow/campaign_sender/node_modules/mongoose/lib/schema/index.js",
+		"/C/git-views/efektjow/campaign_sender/server.js",
+		"/C/git-views/efektjow/campaign_sender/app/test/scheduledMessageTest.js",
+		"/C/git-views/efektjow/campaign_sender/app/test/emailStatisticTest.js",
+		"/C/git-views/efektjow/campaign_sender/app/test/mailStatisticWraperTest.js",
+		"/C/git-views/efektjow/campaign_sender/app/test/redirectingTableTest.js",
+		"/C/git-views/efektjow/campaign_sender/app/test/redirectingTest.js",
+		"/C/git-views/efektjow/campaign_sender/app/routes/redirectingUrls.js",
+		"/C/git-views/efektjow/campaign_sender/node_modules/mongoose/node_modules/mongodb/lib/mongodb/connection/server_capabilities.js",
+		"/C/git-views/efektjow/campaign_sender/node_modules/nodemailer/node_modules/nodemailer-direct-transport/node_modules/smtp-connection/Gruntfile.js",
+		"/C/git-views/efektjow/campaign_sender/node_modules/nodemailer/node_modules/nodemailer-direct-transport/.npmignore",
+		"/C/git-views/efektjow/campaign_sender/node_modules/nodemailer/node_modules/nodemailer-direct-transport/node_modules/smtp-connection/src/smtp-connection.js",
+		"/C/git-views/efektjow/campaign_sender/node_modules/nodemailer/node_modules/nodemailer-direct-transport/src/direct-transport.js",
+		"/C/git-views/efektjow/campaign_sender/node_modules/cheerio/node_modules/htmlparser2/test/Documents/RDF_Example.xml",
+		"/C/git-views/efektjow/campaign_sender/app/utility/repository.js",
+		"/C/git-views/efektjow/campaign_sender/node_modules/rewire/test/testModules/emptyModule.js",
+		"/C/git-views/efektjow/campaign_sender/app/test/campaignModelTest.js",
+		"/C/git-views/efektjow/campaign_sender/test/emailStatisticTest.js",
+		"/C/git-views/efektjow/campaign_sender/app/events.js",
+		"/C/git-views/efektjow/campaign_sender/config/env/all.js",
+		"/C/git-views/efektjow/campaign_sender/test/sendManagerTest.js",
+		"/C/git-views/efektjow/campaign_sender/sendManager.js",
+		"/C/git-views/efektjow/campaign_sender/routes/redirectingUrls.js",
+		"/C/git-views/efektjow/campaign_sender/package.json",
+		"/C/git-views/efektjow/campaign_sender/config/env/test.js",
+		"/C/git-views/efektjow/campaign_sender/config/env/production.js",
+		"//segotx623/got623v002$/segot2ardhn010/vosp-cq/VLDGOT02_NODE02_VOSP-CQ/serverlogs/SystemOut.log",
+		"/C/git-views/efektjow/campaign_sender/models/subscriber.js",
+		"/C/git-views/efektjow/campaign_sender/config/config-test.js",
+		"/C/git-views/efektjow/campaign_sender/test/scheduleMessagesTest.js",
+		"/C/git-views/efektjow/campaign_sender/test/sendServiceTest.js",
+		"/C/git-views/efektjow/campaign_sender/test/campaignModelTest.js",
+		"/C/git-views/efektjow/campaign_sender/scheduleMessages.js",
+		"/C/git-views/efektjow/campaign_sender/test/redirectingTest.js",
+		"/C/git-views/efektjow/campaign_sender/mailStatisticWraper.js",
+		"/C/Users/bpl4605/Desktop/users.csv",
+		"/C/git-views/efektjow/campaign_sender/scripts/insertUserFromLandingPage.mongo",
+		"/C/git-views/efektjow/campaign_sender/efektjow.js",
+		"/C/git-views/efektjow/campaign_sender/test/subscriebersTest.js",
+		"/C/git-views/efektjow/campaign_sender/test/mailStatisticWraperTest.js",
+		"/C/git-views/efektjow/campaign_sender/models/redirectingTable.js",
+		"/C/git-views/efektjow/campaign_sender/config-test.js",
+		"/C/git-views/efektjow/campaign_sender/sendService.js",
+		"/C/git-views/efektjow/campaign_sender/init.js",
+		"/C/git-views/efektjow/campaign_sender/index.html",
+		"/C/git-views/efektjow/campaign_sender/node_modules/autolinker/src/Util.js",
+		"/C/git-views/efektjow/campaign_sender/utility/globalEventBus.js",
+		"/C/git-views/efektjow/campaign_sender/node_modules/sinon/node_modules/util/support/isBuffer.js",
+		"/C/git-views/efektjow/campaign_sender/node_modules/mongoose/node_modules/mpromise/test/promises.Aplus.js",
+		"/C/git-views/efektjow/campaign_sender/node_modules/mongoose/node_modules/mongodb/node_modules/bson/lib/bson/symbol.js",
+		"/C/git-views/efektjow/campaign_sender/node_modules/mongoose/node_modules/mongodb/node_modules/kerberos/lib/win32/wrappers/security_buffer.cc",
+		"/C/git-views/efektjow/campaign_sender/node_modules/mongoose/node_modules/mongodb/node_modules/kerberos/lib/win32/wrappers/security_buffer.js",
+		"/C/git-views/efektjow/campaign_sender/node_modules/mongoose/node_modules/mongodb/node_modules/kerberos/lib/win32/wrappers/security_buffer_descriptor.cc",
+		"/C/git-views/efektjow/campaign_sender/node_modules/autolinker/tests/index.html",
+		"/C/git-views/efektjow/campaign_sender/test/sendMessagesTest.js",
+		"/C/git-views/efektjow/campaign_sender/models/scheduledMessage.js",
+		"/C/git-views/efektjow/campaign_sender/sendMessages.js",
+		"/C/git-views/efektjow/campaign_sender/sendGrid.js",
+		"/C/git-views/efektjow/campaign_sender/emailStatistic.js",
+		"/C/git-views/efektjow/campaign_sender/node_modules/mongoose/static.js",
+		"/C/git-views/efektjow/campaign_sender/node_modules/nodemailer-stub-transport/src/stub-transport.js",
+		"/C/git-views/efektjow/campaign_sender/test/scheduledMessageTest.js",
+		"/C/git-views/efektjow/campaign_sender/models/campaign.js",
+		"/C/git-views/efektjow/campaign_sender/test/redirectingTableTest.js",
+		"/C/git-views/efektjow/campaign_sender/node_modules/mongoose/contRun.sh",
+		"/C/git-views/efektjow/campaign_sender/node_modules/cheerio/Readme.md",
+		"/C/git-views/efektjow/campaign_sender/node_modules/mongoose/node_modules/mongodb/node_modules/kerberos/test/win32/security_credentials_tests.js",
+		"/C/git-views/efektjow/campaign_sender/node_modules/faye/node_modules/tough-cookie/generate-pubsuffix.js",
+		"/C/git-views/efektjow/campaign_sender/node_modules/cheerio/coverage/lcov-report/cheerio/lib/api/traversing.js.html",
+		"/C/git-views/efektjow/campaign_sender/node_modules/cheerio/node_modules/htmlparser2/test/Events/19-named_entities.json",
+		"/C/git-views/efektjow/campaign_sender/node_modules/autolinker/src/match/Url.js",
+		"/C/git-views/efektjow/campaign_sender/node_modules/mongoose/node_modules/mongodb/lib/mongodb/connection/url_parser.js",
+		"/C/git-views/efektjow/campaign_sender/node_modules/rewire/lib/rewire.js",
+		"/C/git-views/efektjow/campaign_sender/node_modules/cheerio/node_modules/htmlparser2/node_modules/readable-stream/lib/_stream_duplex.js",
+		"/C/git-views/efektjow/campaign_sender/node_modules/autolinker/gh-pages/docs/source/Url.html",
+		"/C/git-views/efektjow/campaign_sender/node_modules/autolinker/gh-pages/docs/source/HtmlTag.html",
+		"/C/git-views/efektjow/campaign_sender/node_modules/cheerio/node_modules/htmlparser2/node_modules/readable-stream/lib/_stream_writable.js",
+		"/C/git-views/efektjow/campaign_sender/node_modules/autolinker/gh-pages/docs/output/Autolinker.HtmlTag.js",
+		"/C/git-views/efektjow/campaign_sender/node_modules/mongoose/CONTRIBUTING.md",
+		"/C/git-views/efektjow/campaign_sender/node_modules/events/tests/max-listeners.js",
+		"/C/git-views/efektjow/campaign_sender/node_modules/nodemailer/src/nodemailer.js",
+		"/C/git-views/efektjow/campaign_sender/node_modules/autolinker/gh-pages/docs/output/Autolinker.match.Email.js",
+		"/C/git-views/efektjow/campaign_sender/node_modules/autolinker/gh-pages/docs/source/Email.html",
+		"/C/git-views/efektjow/campaign_sender/node_modules/autolinker/src/match/Email.js",
+		"/C/git-views/efektjow/campaign_sender/fajeSubscriber.js",
+		"/C/git-views/efektjow/campaign_sender/test/mailStatisticWraper.js",
+		"/C/Tools/Sublime3/Data/Packages/User/Preferences.sublime-settings",
+		"/C/Tools/Sublime3/Data/Packages/Default/Preferences.sublime-settings",
+		"/C/git-views/efektjow/campaign_sender/node_modules/sinon/node_modules/formatio/node_modules/samsam/jsTestDriver.conf",
+		"/C/git-views/efektjow/campaign_sender/node_modules/mongoose/node_modules/mpromise/.idea/jsLibraryMappings.xml",
+		"/C/git-views/efektjow/campaign_sender/node_modules/mongoose/node_modules/ms/test/support/jquery.js",
+		"/C/git-views/efektjow/campaign_sender/globalEventBus.js",
+		"/C/git-views/playground/.bowerrc",
+		"/C/Users/bpl4605/.gitconfig",
+		"/C/git-views/efektjow/campaign_sender/node_modules/faye/node_modules/faye-websocket/node_modules/websocket-driver/lib/websocket/driver/hybi/message.js",
+		"/C/git-views/efektjow/campaign_sender/events.js",
+		"/C/git-views/efektjow/campaign_sender/todo.md",
+		"/C/Users/bpl4605/Desktop/majaGoraczka.txt",
+		"/C/Tools/Sublime3/Data/Packages/User/mocha.sublime-build",
+		"/C/Tools/Sublime3/sublime.bat",
+		"/C/git-views/efektjow/campaign_sender/node_modules/underscore-node/lib/.idea/scopes/scope_settings.xml",
+		"/C/git-views/efektjow/campaign_sender/node_modules/underscore-node/lib/underscore.js"
+	],
+	"find":
+	{
+		"height": 39.0
+	},
+	"find_in_files":
+	{
+		"height": 169.0,
+		"where_history":
+		[
+			"",
+			"C:\\svn-views\\VOSP\\branch\\37",
+			"C:\\svn-views\\VOSP\\trunk\\VospCq",
+			"C:\\svn-views\\BaldoTrunk\\Baldo\\BaldoWeb\\WebContent\\"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"var entry = {",
+			"getUnsubscribeLink",
+			"redirecitngUrlMap",
+			"app",
+			"RedirecitngUrl",
+			"key",
+			"subsc",
+			"data",
+			"db",
+			"init",
+			"createInvitationMail",
+			"'",
+			"scheduleMessages",
+			"sendMessages",
+			"}",
+			"	",
+			"console",
+			"subscr",
+			"redirectingTable",
+			"redirectUrl",
+			"mailStatisticWraper",
+			"indexOf",
+			"console",
+			"config.rederictingPath",
+			"rederictingPath",
+			"replaceAddressForRedirect",
+			"Autolinker",
+			"registerEvent",
+			"regist",
+			"mailCli",
+			"linkClicked",
+			"cons",
+			"console",
+			"conso",
+			"hash",
+			"conso",
+			"mongoose",
+			"moongose.co",
+			"moongese.co",
+			"mongoose",
+			"console",
+			"equal",
+			"openDate",
+			"customer",
+			"routes",
+			"redirectingTable",
+			"mailsRedirectingRoutes",
+			"regist",
+			"subject",
+			"scheduledMessage",
+			"createInvitationScheduledMessage",
+			"info",
+			"_this",
+			"bus",
+			"eventEmitter",
+			"sendService",
+			"weAreDone",
+			"console",
+			"info",
+			"done",
+			"console",
+			"\n				",
+			"EventEmitter",
+			"ScheduledMessage",
+			"GetModel",
+			"console.log",
+			"	",
+			"VOSP.APP.ALERTLIST.REQ.OUT",
+			"russi",
+			"rus",
+			"trans",
+			"DatabaseNoResultException",
+			"NoResultException",
+			"DatabaseNoResultException",
+			"Database",
+			"DatabaseNoResultException",
+			"import com.volvo.vospcq.common.e.DatabaseNoResultException;",
+			"form",
+			"VOS",
+			"vos",
+			"label.general.predictSerie",
+			"Projeté",
+			"Prévu",
+			"Graphique mis à jour une fois par mois avec la valeur mensuelle moyenne du paramètre de P.T.R.C. ",
+			"Predict",
+			"Projeté",
+			"Les valeurs GCW ne peuvent être",
+			"Les valeurs GCW",
+			"Les valeurs GCW ",
+			"PTRA",
+			"La ligne noire indique la valeur du",
+			"La ligne noire indique la valeur du PTRA défini dans le calendrier d’entretien",
+			"État de santé (SOH, State-Of-Health) de la batterie représenté sur le graphique",
+			"graphique indique",
+			"Le graphique indique la distance restante",
+			"Prévu ",
+			"La ligne noire indique la valeur de topographie définie dans le planning",
+			"Inférieure",
+			"Supérieure",
+			"Kilométrage annuel défini sur",
+			"Kilométrage annuel prévu",
+			"DIRECT_PAYMENT",
+			"market",
+			"]?",
+			"findOccurenceOfTextInFile",
+			"findOccurenceOfTextInFile()",
+			"findOccurenceOfTexts",
+			"findOccurenceOfText",
+			"map",
+			"languageColumn",
+			"columns",
+			"column",
+			"getColumn",
+			"recordIndex",
+			"putColu",
+			"multiproperties",
+			"def \"read translation to multiproperties table\"() {\n		setup:		\n		def propertiesFile = new File('src/test/resources/normal.xml')\n		final byte[] content = new InputStreamContentReader(new FileInputStream(propertiesFile)).getContent();\n		final ISchemaConverter schemaConverter = SchemaConverterFactory.getSchemaConverter(content);\n		when:	\n		Table table = schemaConverter.convert(content);		\n		then:\n		table.getColumns().size() == 2\n		table.sizeOfProperties() == 2\n	}",
+			"columns",
+			"table.",
+			"columns",
+			"table.",
+			"propertiesFile",
+			"table",
+			"name",
+			"Name",
+			"name",
+			"Name",
+			"name"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			";",
+			"redirectUrl",
+			"msg",
+			"response",
+			"eventBus",
+			"sendingDone",
+			";",
+			"NoResultException",
+			"javax.persistence.NoResultException;",
+			"Niveau de charge des batteries exprimé en %  NB : Seul un contrôle en atelier avec le MIDTRONIC permet de connaitre l’état de charge réel des batteries (cf classeur garantie)",
+			"La ligne noire indique la valeur de Topographie définie dans le calendrier d’entretien VOSP",
+			"Kilométrage annuel planifié dans le plan VOSP =",
+			"Kilométrage annuel projeté ="
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "app/routes/redirectingUrls.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1536,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								798,
+								798
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Better JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"word_separators": "./\\\\()\\\"\\'-:,.;<>~!@#%^&*|+=[]{}`~?"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/models/redirectingTable.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 980,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								191,
+								186
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Better JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"word_separators": "./\\\\()\\\"\\'-:,.;<>~!@#%^&*|+=[]{}`~?"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/models/subscriber.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4283,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3426,
+								3426
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Better JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2073.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/mailStatisticWraper.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3899,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3569,
+								3569
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Better JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1876.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/scheduleMessages.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1381,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								663,
+								663
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Better JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"word_separators": "./\\\\()\\\"\\'-:,.;<>~!@#%^&*|+=[]{}`~?"
+						},
+						"translation.x": 535.0,
+						"translation.y": 276.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/models/scheduledMessage.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 540,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								350,
+								350
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Better JavaScript/JavaScript.tmLanguage",
+							"word_separators": "./\\\\()\\\"\\'-:,.;<>~!@#%^&*|+=[]{}`~?"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "app/sendManager.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 721,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								586,
+								586
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Better JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "app/test/mailStatisticWraperTest.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4407,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3027,
+								3037
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Better JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 946.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "app/sendService.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 887,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								735,
+								735
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Better JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"word_separators": "./\\\\()\\\"\\'-:,.;<>~!@#%^&*|+=[]{}`~?"
+						},
+						"translation.x": 0.0,
+						"translation.y": 181.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "app/emailStatistic.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2088,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1446,
+								1446
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Better JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 127.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "config/env/test.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 995,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								990,
+								990
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Better JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 218.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "config/env/all.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 339,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								294,
+								305
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Better JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "config/env/development.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 349,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								194,
+								234
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Better JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "server.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1094,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								939,
+								939
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Better JavaScript/JavaScript.tmLanguage",
+							"word_separators": "./\\\\()\\\"\\'-:,.;<>~!@#%^&*|+=[]{}`~?"
+						},
+						"translation.x": 0.0,
+						"translation.y": 460.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 31.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 448.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "campaign_sender.sublime-project",
+	"replace":
+	{
+		"height": 72.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"wrap",
+				"app\\mailStatisticWraper.js"
+			],
+			[
+				"schedule",
+				"app\\scheduleMessages.js"
+			],
+			[
+				"red",
+				"app\\models\\redirectingTable.js"
+			],
+			[
+				"mails",
+				"app\\mailStatisticWraper.js"
+			],
+			[
+				"sub",
+				"app\\models\\subscriber.js"
+			],
+			[
+				"mai",
+				"app\\mailStatisticWraper.js"
+			],
+			[
+				"ser",
+				"server.js"
+			],
+			[
+				"e",
+				"config\\express.js"
+			],
+			[
+				"redirectingt",
+				"app\\models\\redirectingTable.js"
+			],
+			[
+				"mail",
+				"app\\mailStatisticWraper.js"
+			],
+			[
+				"sched",
+				"app\\scheduleMessages.js"
+			],
+			[
+				"scheduled",
+				"app\\models\\scheduledMessage.js"
+			],
+			[
+				"sendse",
+				"app\\sendService.js"
+			],
+			[
+				"sendm",
+				"app\\sendManager.js"
+			],
+			[
+				"schedulemes",
+				"app\\test\\scheduleMessagesTest.js"
+			],
+			[
+				"ex",
+				"config\\express.js"
+			],
+			[
+				"ini",
+				"config\\init.js"
+			],
+			[
+				"con",
+				"config\\config.js"
+			],
+			[
+				"sendma",
+				"app\\sendManager.js"
+			],
+			[
+				"sendser",
+				"app\\sendService.js"
+			],
+			[
+				"schedu",
+				"app\\scheduleMessages.js"
+			],
+			[
+				"redirectingur",
+				"app\\routes\\redirectingUrls.js"
+			],
+			[
+				"redi",
+				"app\\models\\redirectingTable.js"
+			],
+			[
+				"ema",
+				"app\\emailStatistic.js"
+			],
+			[
+				"sendman",
+				"sendManager.js"
+			],
+			[
+				"exp",
+				"config\\express.js"
+			],
+			[
+				"serve",
+				"server.js"
+			],
+			[
+				"packe",
+				"package.json"
+			],
+			[
+				"init",
+				"init.js"
+			],
+			[
+				"pa",
+				"package.json"
+			],
+			[
+				"pack",
+				"package.json"
+			],
+			[
+				"send",
+				"test\\sendMessagesTest.js"
+			],
+			[
+				"subs",
+				"models\\subscriber.js"
+			],
+			[
+				"",
+				"test\\mailStatisticWraperTest.js"
+			],
+			[
+				"wra",
+				"mailStatisticWraper.js"
+			],
+			[
+				"sen",
+				"sendMessages.js"
+			],
+			[
+				"statisti",
+				"mailStatisticWraper.js"
+			],
+			[
+				"sendmes",
+				"sendMessages.js"
+			],
+			[
+				"mailstat",
+				"mailStatisticWraper.js"
+			],
+			[
+				"emai",
+				"test\\mailStatisticWraperTest.js"
+			],
+			[
+				"cam",
+				"models\\campaign.js"
+			],
+			[
+				"scheduleme",
+				"test\\scheduledMessageTest.js"
+			],
+			[
+				"sendme",
+				"test\\sendMessagesTest.js"
+			],
+			[
+				"co",
+				"config-test.js"
+			],
+			[
+				"s",
+				"models\\subscriber.js"
+			],
+			[
+				"em",
+				"test\\emailStatisticTest.js"
+			],
+			[
+				"gl",
+				"globalEventBus.js"
+			],
+			[
+				"su",
+				"models\\subscriber.js"
+			],
+			[
+				"emails",
+				"test\\emailStatisticTest.js"
+			],
+			[
+				"sch",
+				"models\\scheduledMessage.js"
+			],
+			[
+				"tod",
+				"todo.md"
+			],
+			[
+				"to",
+				"todo.md"
+			],
+			[
+				"re",
+				"test\\redirectingTest.js"
+			],
+			[
+				"se",
+				"test\\sendServiceTest"
+			],
+			[
+				"sche",
+				"models\\scheduledMessage.js"
+			],
+			[
+				"sends",
+				"test\\sendServiceTest"
+			],
+			[
+				"sc",
+				"test\\scheduledMessageTest"
+			],
+			[
+				"glo",
+				"globalEventBus.js"
+			],
+			[
+				"jm",
+				"src\\resources\\jmeter.properties"
+			],
+			[
+				"b",
+				"build.gradle"
+			],
+			[
+				"us",
+				"src\\resources\\user.properties"
+			],
+			[
+				"vo",
+				"src\\test\\vospCqSample.jmx"
+			],
+			[
+				"bui",
+				"build.gradle"
+			],
+			[
+				"in",
+				"src\\docs\\asciidoc\\index.adoc"
+			],
+			[
+				"n",
+				"src\\test\\resources\\normal.xml"
+			],
+			[
+				"rea",
+				"src\\test\\groovy\\ReadExcelWithTranslationSpec.groovy"
+			],
+			[
+				"main",
+				"src\\main\\java\\com\\volvo\\vospcq\\multiproperties\\editor\\Main.java"
+			],
+			[
+				"ma",
+				"src\\main\\java\\com\\volvo\\vospcq\\multiproperties\\editor\\Main.java"
+			],
+			[
+				"ed",
+				"src\\main\\java\\com\\volvo\\vospcq\\multiproperties\\editor\\EditWindow.java"
+			],
+			[
+				"serv",
+				"app\\scripts\\services\\chartservice.js"
+			],
+			[
+				"main.ht",
+				"app\\views\\main.html"
+			],
+			[
+				"informacjepodstawowe",
+				"src\\docs\\guide\\informacjePodstawowe.gdoc"
+			],
+			[
+				"userse",
+				"app\\domains\\user\\services\\userServices.js"
+			],
+			[
+				"userc",
+				"app\\domains\\user\\controllers\\userController.js"
+			],
+			[
+				"contro",
+				"app\\shared\\controllers\\controller.js"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 342.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
