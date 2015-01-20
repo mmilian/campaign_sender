@@ -19,6 +19,7 @@ var EmailStatistic = function() {
 			});
 		});
 	};
+	var test = 'test';
 	var _linkClicked = function(id,cb) {
 		redirectingTable.findById(id, function(err,data) {
 			subscriber.linkClicked(data.campaignId,data.url,data.email,function() {
