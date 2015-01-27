@@ -1,4 +1,6 @@
 'use strict';
+var nodemailer = require('nodemailer');
+
 
 var generator = require('xoauth2').createXOAuth2Generator({
     user: '*',
