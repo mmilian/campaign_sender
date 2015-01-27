@@ -7,11 +7,6 @@
 		"node": "0.10.x",
 		"npm": "2.1.x"
 	},
-	"scripts": {
-		"start": "grunt",
-		"test": "grunt test",
-		"postinstall": "bower install --config.interactive=false"
-	},
 	"dependencies": {
 		"express": "~4.10.1",
 		"express-session": "~1.9.1",
