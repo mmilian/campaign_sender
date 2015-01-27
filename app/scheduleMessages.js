@@ -1,4 +1,4 @@
-var Campaign = require('../models/Campaign');
+var Campaign = require('./models/campaign');
 var	config = require("../config/config");
 var mongoose = require("mongoose");
 var _ = require('lodash');
