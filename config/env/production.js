@@ -1,7 +1,5 @@
 'use strict';
 
-
-
 var generator = require('xoauth2').createXOAuth2Generator({
     user: '*',
     clientId: '*',
