@@ -103,6 +103,7 @@ var Subscriber = function(){
 
    var _unsubscribed = function(email,success,fail) {
     _findByEmail(email,function(err,doc) {
+      console.log("Email " + email + " : " + err);
       doc.status = 'unsubscribed';
       doc.save(function(err) {
         if (err) {

@@ -9,13 +9,13 @@ var EmailStatistic = function() {
 	
 	var _mailOpened = function(id,cb) {
 		redirectingTable.findById(id, function(err,data) {
-			console.log("Find by id %s", data);
+			console.log("Find by id %s following data %s",id,data);
 			subscriber.campaignOpened(data.campaignId,data.email,function() {
 				console.log('Campaign with id %s has been opened by %s and added to statistics',id,data.email);
-				cb();
+				//cb();
 			}, function(err) {
 				console.log('Campaign with id %s has been opened by %s but could not be added to statistics: %s',id,data.email,err);
-				cb();
+				//cb();
 			});
 		});
 	};
@@ -24,24 +24,23 @@ var EmailStatistic = function() {
 		redirectingTable.findById(id, function(err,data) {
 			subscriber.linkClicked(data.campaignId,data.url,data.email,function() {
 				console.log('Campaign with id %s has been opened by %s and added to statistics',id,data.email);
-				cb();
+				//cb();
 			}, function(err) {
 				console.log('Campaign with id %s has been opened by %s but could not be added to statistics: %s',id,data.email,err);
-				cb();
+				//cb();
 			});
 		});
 	};
 
 	var _unsubscribeClicked = function(id,cb) {
-		console.log("WWWW");
 		redirectingTable.findById(id, function(err,data) {
 			console.log("Find by id %s", data);
 			subscriber.unsubscribe(data.email,function() {
-				console.log('Campaign with id %s has been opened by %s and added to statistics',id,data.email);
-				cb();
+				console.log('Campaign with id %s has been unsubscribed by %s',id,data.email);
+				//cb();
 			}, function(err) {
-				console.log('Campaign with id %s has been opened by %s but could not be added to statistics: %s',id,data.email,err);
-				cb();
+				console.log('Campaign with id %s has been unsubscribed by %s',id,data.email,err);
+				//cb();
 			});
 		});
 	};

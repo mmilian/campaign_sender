@@ -26,7 +26,7 @@ var scheduleMessages = {
 						from: doc.from,
 						subject: doc.subject,
 						text: doc.text,
-						html: wrapMailInTrackingUrls.wrapMailInTrackingUrls(doc.html,subscriber.email,subscriber.nick,doc.id);//wrapMailInTrackingUrls && _.isFunction(wrapMailInTrackingUrls) ? wrapMailInTrackingUrls(doc.html) : doc.html
+						html: wrapMailInTrackingUrls(doc.html,subscriber.email,subscriber.nick,doc.id)//wrapMailInTrackingUrls && _.isFunction(wrapMailInTrackingUrls) ? wrapMailInTrackingUrls(doc.html) : doc.html
 					}));;
 				});
 

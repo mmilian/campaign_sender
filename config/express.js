@@ -23,6 +23,9 @@
  config = require('./config'),
  consolidate = require('consolidate'),
  path = require('path');
+var bus = require("../app/utility/globalEventBus.js");
+
+
 
  module.exports = function(db) {
 	// Initialize express app
@@ -54,7 +57,8 @@
 
 	app.use(config.openRatePath,function(req, res, next) {
 			var query = require('url').parse(req.url,true).query;		
-			console.log('Middleware says %s %s and id %s', req.method, req.url, query.id);
+			console.log('Open rate says %s %s and id %s', req.method, req.url, query.id);			
+			bus.emitEvent('mail_opened', query.id);
 			res.status(200).end();
 	});
 

@@ -58,9 +58,10 @@ var cheerio = require('cheerio');
 			var entry = {
 				_id: createUniqueId || _createUniqueId,
 				email: email,
-				url: config.hostName + config.unsubscribePath,
+				url: "http://efektjow.pl",
 				campaignId: campaignId
 			};
+			console.log('Entry!!!' +  entry);
 			return (htmlContent.indexOf('#Unsubscribe#') > -1) ? htmlContent.replace('#Unsubscribe#', '<a href="' + getUnsubscribeLink(entry) + '" target="_blank">Nie chcę więcj otrzymywać maili od zmieleni.pl i efektjow.pl</a>') : htmlContent;
 		};
 
@@ -71,7 +72,7 @@ var cheerio = require('cheerio');
 				url: config.hostName + config.openRatePath,
 				campaignId: campaignId
 			};
-			return (htmlContent.indexOf('#OpenRate#') > -1) ? htmlContent.replace('#OpenRate#', '<img href="' + getOpenRateLink(entry) + '"/>') : htmlContent;
+			return (htmlContent.indexOf('#OpenRate#') > -1) ? htmlContent.replace('#OpenRate#', '<img src="' + getOpenRateLink(entry) + '" height="0" width="0"/>') : htmlContent;
 		};
 
 		var _replaceExistingUrlByTracking = function(htmlContent, email, campaignId, createUniqueId) {
@@ -89,7 +90,8 @@ var cheerio = require('cheerio');
 		};
 
 		var _replaceNickName = function(htmlContent, nick, campaignId, createUniqueId) {
-				return htmlContent.replace('#Nick#', nick);				
+				console.log("nick " + nick);
+				return htmlContent.replace(/#Nick#/g, nick);				
 			}; 
 
 		var _wrapMailInTrackingUrls = function(htmlContent,email,nick, campaignId, createUniqueId) {

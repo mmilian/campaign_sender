@@ -30,11 +30,11 @@ describe("Subscribers:", function(){
     });  
   });  
 
-    afterEach(function(done){    
+/*    afterEach(function(done){    
       subscriber.model.remove({}, function() {      
         done();    
       });  
-    });
+    });*/
 
     it("registers a new subscriber", function(done){    
       subscriber.register({nick : 'nick2', email : "test2@test.com"}, function(doc){      
