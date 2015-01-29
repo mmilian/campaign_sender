@@ -10,10 +10,10 @@ var generator = require('xoauth2').createXOAuth2Generator({
    	accessToken: process.env.GMAIL_ACCESS_TOKEN // optional
 });
 
-console.log(GMAIL_CLIENT_ID);
-console.log(GMAIL_CLIENT_SECRET);
-console.log(GMAIL_REFRESH_TOKEN);
-console.log(GMAIL_ACCESS_TOKEN);
+console.log(process.env.GMAIL_CLIENT_ID);
+console.log(process.env.GMAIL_CLIENT_SECRET);
+console.log(process.env.GMAIL_REFRESH_TOKEN);
+console.log(process.env.GMAIL_ACCESS_TOKEN);
 
 // listen for token updates
 // you probably want to store these to a db
