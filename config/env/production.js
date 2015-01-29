@@ -3,12 +3,17 @@ var nodemailer = require('nodemailer');
 
 
 var generator = require('xoauth2').createXOAuth2Generator({
-    user: '*',
-    clientId: '*',
-    clientSecret: '*',
-    refreshToken: '*',
-   	accessToken: '*' // optional
+    user: 'spolecznoscjow@gmail.com',
+    clientId: process.env.GMAIL_CLIENT_ID,
+    clientSecret: process.env.GMAIL_CLIENT_SECRET,
+    refreshToken: process.env.GMAIL_REFRESH_TOKEN,
+   	accessToken: process.env.GMAIL_ACCESS_TOKEN // optional
 });
+
+console.log(GMAIL_CLIENT_ID);
+console.log(GMAIL_CLIENT_SECRET);
+console.log(GMAIL_REFRESH_TOKEN);
+console.log(GMAIL_ACCESS_TOKEN);
 
 // listen for token updates
 // you probably want to store these to a db
@@ -28,5 +33,5 @@ var sender = nodemailer.createTransport(({
 module.exports = {
 	db: process.env.MONGOHQ_URL || process.env.MONGOLAB_URI || 'mongodb://' + (process.env.DB_1_PORT_27017_TCP_ADDR || 'localhost') + '/efektjow_test',
 	mailSender : sender,
-	hostName : "http://localhost/"
+	hostName : "http://powerful-spire-9361.herokuapp.com/"
 };
