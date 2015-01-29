@@ -42,7 +42,7 @@ var cheerio = require('cheerio');
 							var entry = {
 								_id: createUniqueId || _createUniqueId,
 								email: email,
-								url: tag.href || match,
+								url: tag.href || match.getUrl(),
 								campaignId: campaignId
 							};
 
