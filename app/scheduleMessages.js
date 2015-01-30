@@ -12,13 +12,13 @@ var scheduleMessages = {
 		Campaign.findOne({
 			id: data.campaignId
 		}, function(err, doc) {
-			if (err) {
+			if (err) {	
 				cb(err);
 				return;
 			}
 			Subscriber.model.find({}, function(err, subscribers) {
 				var messages = [];
-				_.each(subscribers, function(subscriber) {
+				_.each(subscribers, function(subscriber) {					
 					messages.push(ScheduledMessage({
 						to: subscriber.email,
 						planedSendDate: data.date || Date.now(),

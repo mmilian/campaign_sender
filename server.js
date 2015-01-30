@@ -26,17 +26,7 @@ var app = require('./config/express')(db);
 // Start the app by listening on <port>
 app.listen(config.port);
 
-
-//schedule sending messages
-var SenderManager = require('./app/sendManager');
-var senderManager = new SenderManager(config);
-setInterval(senderManager.sendAllMessages, 10000, function(err,result) {
-	if (err) {
-		console.log(err);
-	} else {
-		console.log(result);
-	}
-});
+require('./app/utility/sendingMailsJob');
 
 var emailStatistic = require('./app/emailStatistic');
 // Expose app

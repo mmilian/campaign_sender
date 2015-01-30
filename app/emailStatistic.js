@@ -7,6 +7,16 @@ var	config = require("../config/config");
 
 var EmailStatistic = function() {
 	
+	var _mailSent = function(data) {
+		subscriber.campaignSent(data.campaignId,data.email,function() {
+			console.log('Campaign with id %s has been sent to %s',data.campaignId,data.email);
+				//cb();
+			}, function(err) {
+				console.log('Campaign with id %s has been not sent to %s: %s',id,data.email,err);
+				//cb();
+			});
+	};
+
 	var _mailOpened = function(id,cb) {
 		redirectingTable.findById(id, function(err,data) {
 			console.log("Find by id %s following data %s",id,data);
@@ -18,7 +28,8 @@ var EmailStatistic = function() {
 				//cb();
 			});
 		});
-	};
+	};	
+
 
 	var _linkClicked = function(id,cb) {
 		redirectingTable.findById(id, function(err,data) {
@@ -45,6 +56,9 @@ var EmailStatistic = function() {
 		});
 	};
 
+	bus.registerEvent('mail_sent', function(data) {
+		_mailSent(data);
+	});
 	bus.registerEvent('mail_opened', function(id) {
 		_mailOpened(id);
 	});

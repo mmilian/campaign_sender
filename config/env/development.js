@@ -7,7 +7,7 @@ var sender = nodemailer.createTransport(stubTransport());
 
 
 module.exports = {
-	db: 'mongodb://localhost/efektjow_test',
+	db: 'mongodb://localhost/efektjow_dev',
 	app: {
 		title: 'MEAN - Development Environment'
 	},

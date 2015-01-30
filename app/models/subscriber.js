@@ -81,6 +81,18 @@ var Subscriber = function(){
       //success({email : email, campaigns : [{campaignId : 'campaignId', opened : 1}]});
     };
 
+    var _campaignSent  = function(campaignId,email,success,fail) {
+    _findByEmail(email,function(err,subscriber) { 
+      var campaign = _findCampaign(campaignId,subscriber);
+      subscriber.save(function(err) {
+        if (err) 
+          fail(err);
+        success(subscriber);
+      });
+    },fail);
+      //success({email : email, campaigns : [{campaignId : 'campaignId', opened : 1}]});
+    };
+
     var _linkClicked = function(campaignId,url,email,success,fail) {
       _findByEmail(email,function(err,doc) { 
         var campaign = _findCampaign(campaignId,doc);
@@ -129,7 +141,8 @@ var Subscriber = function(){
     register : _register,
     campaignOpened : _campaignOpened,
     linkClicked : _linkClicked,
-    unsubscribe : _unsubscribed
+    unsubscribe : _unsubscribed,
+    campaignSent : _campaignSent
   }
 }();
 

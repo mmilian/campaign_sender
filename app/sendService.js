@@ -26,15 +26,20 @@ var sendService = {
 
 		function iterator(message,callback) {										
 			sender.sendMail(message,function(err,info) {
-				bus.emitEvent('mail_sent',message.to);
-				console.log(err);
 				response.sent++;
 				response.to.push(message.to);
 				response.transport.push(info);
-				message.sentLog = JSON.stringify(response);
+				if (err) { 
+					console.log(err);
+					message.sentLog = JSON.stringify(err);
+				}
+				if (info) {
+					bus.emitEvent('mail_sent',{campaignId : message.campaignId, email : message.to});
+					message.sentLog = JSON.stringify(info);
+				}
 				message.save();
 				callback();
-				});					
+			});					
 		}; 
 
 		async.eachSeries(messages,iterator,sendingDone);

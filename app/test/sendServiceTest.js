@@ -39,9 +39,9 @@ describe('Send messages service:', function(){
 
 	it('one message to send and one event should be emited ', function(done){
 		var messages = [];
-		messages.push(createInvitationScheduledMessage('fundacja@jow.pl',yesterday));
+		messages.push(createInvitationScheduledMessage('fundacja@jow.pl',yesterday,'campaignId'));
 		bus.registerEventOnce('mail_sent', function(data) {
-			data.should.be.equal('fundacja@jow.pl');
+			data.should.be.eql({email : 'fundacja@jow.pl', campaignId : 'campaignId'});
 			done();
 		});
 
@@ -69,13 +69,13 @@ describe('Send messages service:', function(){
 		return re.test(email);
 	};		
 	*/
-	function createInvitationScheduledMessage(email,date,campaignType,from,subject,text,html) {
+	function createInvitationScheduledMessage(email,date,campaignId,from,subject,text,html) {
 		
 		var msg = ScheduledMessage(
 		{
 			to	: email,
 			planedSendDate : date ? date : new Date(2014, 12, 25, 8, 30),
-			campaignType : campaignType ? campaignType : 'invitation',
+			campaignId : campaignId ? campaignId : 'invitation',
 			from : from ? from : 'kontakt@efektjow.pl',
 			subject : subject ? subject : 'This is sample subject',
 			text : text ? text : 'This is sample text body',
