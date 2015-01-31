@@ -8,9 +8,11 @@ var SendManager = function(config) {
 	var sender = config.mailSender;
 	var sendService = sendingEngine.sendService;
 	var _sendAllMessages = function(cb) {
-		ScheduledMessage.findMessagesReadyToSendOut(function(err,messages) {
+		ScheduledMessage.findMessagesReadyToSendOut(function(err,message) {
 			//console.log(messages);
-			//var messages = [message];
+			var messages = [];
+			if (message) 
+				messages.push(message);
 			sendService.send(messages,sender,function(err,response) {
 				console.log(response);
 				console.log(err);
