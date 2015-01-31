@@ -14,7 +14,7 @@ var ScheduledMessageSchema = new Schema({
 });
 
 ScheduledMessageSchema.statics.findMessagesReadyToSendOut = function(cb) {
-	this.findOne({sentLog: {$exists: false}}).where('planedSendDate').lte(Date.now()).exec(cb);
+	this.find({sentLog: {$exists: false}}).where('planedSendDate').lte(Date.now()).exec(cb);
 };
 
 var ScheduledMessage = mongoose.model('ScheduledMessage', ScheduledMessageSchema);

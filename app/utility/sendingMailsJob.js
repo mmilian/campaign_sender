@@ -6,7 +6,7 @@ var bus = require("./globalEventBus.js");
 
 
 function sendingMails() {
-	setTimeout(senderManager.sendAllMessages, 3000, function(err,result) {
+	setTimeout(senderManager.sendAllMessages, 10000, function(err,result) {
 		if (err) {
 			console.log(err);
 		} else {
