@@ -75,5 +75,4 @@ var EmailStatistic = function() {
 		unsubscribeClicked : _unsubscribeClicked	
 	}
 }();
-
 module.exports=EmailStatistic;
