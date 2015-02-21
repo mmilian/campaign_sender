@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"con",
+				"controller"
+			],
+			[
+				"cons",
+				"console"
+			],
+			[
+				"_",
+				"_limitPerDay"
+			],
+			[
+				"Mul",
+				"MultiSender"
+			],
+			[
 				"red",
 				"redirecitngUrlMap (obj)"
 			],
@@ -46,10 +62,6 @@
 			[
 				"_ad",
 				"_addOpenRateTracking (fn)"
-			],
-			[
-				"_",
-				"_addUnsubscribeLink (fn)"
 			],
 			[
 				"_a",
@@ -216,10 +228,6 @@
 				"planedSendDate"
 			],
 			[
-				"con",
-				"console"
-			],
-			[
 				"Sch",
 				"ScheduledMessage"
 			],
@@ -304,21 +312,87 @@
 	"buffers":
 	[
 		{
-			"file": "app/routes/redirectingUrls.js",
+			"file": "config/gmailSenders.js",
 			"settings":
 			{
-				"buffer_size": 1536,
+				"buffer_size": 959,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"contents": "var mongoose = require('mongoose');\nvar Schema = require('mongoose').Schema;\nvar _ = require('lodash');\n\nvar RedirectingTable = function() {\n	var redirectingTableSchema = new Schema({\n		email: String,\n		url: String,\n		campaignId: String\n	});\n\n	var _model = mongoose.model('RedirectingTable', redirectingTableSchema);\n\n	var _findById = function(id, cb) {\n		_model.findOne({\n			_id: id\n		}, function(err, result) {\n			console.log(\"How\" + result);\n			cb(err, result);\n		});\n	};\n\n	var _findUrlById = function(id, cb) {\n		_findById(id, function(err, result) {\n			console.log(\"How2\" + result);\n			cb(result.url);\n		});\n	};\n\n	var _createNewEntry = function(data, cb) {\n		//var newEntry = new _model(data);\n		if (!(data._id == null))  \n			data._id = _.isFunction(data._id) ? data._id() : data._id;		\n		_model.create(data, cb);\n	};\n\n	return {\n		findById: _findById,\n		findUrlById: _findUrlById,\n		createNewEntry: _createNewEntry,\n		model: _model\n	}\n}();\n\nmodule.exports = RedirectingTable;",
-			"file": "app/models/redirectingTable.js",
-			"file_size": 1022,
-			"file_write_time": 130656645182694897,
+			"contents": "'use strict';\n\nvar should = require('should');\nvar senderController = require('../../utility/mails/senderController');\nvar nodemailer = require('nodemailer');\nvar stubTransport = require('nodemailer-stub-transport');\nvar config = require(\"../../../config/config\");\n\ndescribe('Read GMAIL_CREDENTIALS:', function() {\n	it('expected to have a list of senders', function (done) {\n		var senders = require(\"../../../config/gmailSenders\");\n		senders.constructor.should.equal(Array);\n		senders.length.should.equal(1);\n		senders[0].transporter.options.service.should.equal('gmail');\n		done();\n	});\n	it('should create senderController', function (done) {\n		var senders = require(\"../../../config/gmailSenders\");\n		var controller = senderController(senders[0]);\n		console.log(controller.isAvailable());\n		controller.isAvailable().should.equal(true);\n		done(); \n	});\n});\n\n//var MultiSender = require(\"../../utility/mails/multiSender\")\nvar multiSender = config.mailSender;\n\ndescribe('Multi sender', function () {\n\n	it('has sendMail function', function (done) {\n		multiSender.sendMail({},function(err,res) {			\n			should.not.exist(err);\n			should.exist(res);\n			done();\n		});\n	});\n\n/*	it('can not sent when no available senders', function (done) {\n		multiSender = MultiSender([nodemailer.createTransport(stubTransport())]);		\n		multiSender.sendMail({},function(err,res) {			\n			should.exist(err);\n			should.not.exist(res);\n			done();\n		});\n	});*/\n});\n\n/*function testuje() {var a = 0; var _setA = function(val) {a=val; }; var _showA = function() {console.log(a); }; return {setA : _setA, showA : _showA }; }*/",
+			"file": "app/test/config/gmailSenderTests.js",
+			"file_size": 1642,
+			"file_write_time": 130687510982929461,
 			"settings":
 			{
-				"buffer_size": 980,
+				"buffer_size": 1594,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Tools/Sublime3/Data/Packages/JSHint Gutter/.jshintrc",
+			"settings":
+			{
+				"buffer_size": 725,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Oracle Server: gorapre12.srv.volvo.com\n\n \n\nOracle DB: gaalmp01\n\nApplications using above DB:\n\n    JiRA-4.0.1 username: aalm_jira_02\n    JiRA-4.2 username: aalm_jira_03\n    JiRA-4.4 username: aalm_jira_03\n\n    JIRA 5.1 username: aalm_jira_05 \n\n    Password : aalmjira05   \n    JIRA 6.1 username : aalm_jira_06\n\n            Password : aalmjira06\n\n    Confluence username: aalm_confluence_02\n    Confluence 4.3 : aalm_confluence_05\n    password: aalmconfluence05\n    Confluence 5.1 : aalm_confluence_06\n\n    password: aalmconfluence06 \n\n    Sonar username: sonar204\n    password: sonar2041\n\nDatabase used by test instances\n\nSonar on segotl0250.got.volvo.net\n\ngaalmp01\n\nSchema : sonar205\n\npassword: sonar2051\n\ngorapre12.srv.volvo.com:1523:gaalmp01\n\n\nConfluence On segotl0250.got.volvo.net\n\nUsername : AALM_CONFLUENCE_03\n\nConfluence : confluence3\n\norapre1.srv.volvo.com:1523:gaalmp01\n\nDatabase used in disaster Server (segotl1076.got.volvo.net)\nJIRA :http://131.97.103.196:8080/\n	\nCONFLUENCE :http://131.97.103.196:8090\n	\n \n\nUsername  : aalm_jira_02\n\nPassword : aalmjira02\n	\n\nUsername  : aalm_jira_03\n\nPassword : aalmjira03\n	 \n\n\nEmpty Databases\n\n \n\ngaalmp01 \n\nSchema : aalm_jira_07 \n\nPassword : aalmjira07 \n\ngorapre12.srv.volvo.com:1523:gaalmp01 \n\n \n\n3. Schema : aalm_jira_08\n\nPassword : aalmjira08\n\n \n\n4. Schema : aalm_jira_09\n\nPassword : aalmjira09\n\ngaalmp01  \n\nSchema : aalm_confluence_07 \n\npassword: aalmconfluence07 \n\ngorapre12.srv.volvo.com:1523:gaalmp01 \n\n\n\n\n1. Schema : aalm_confluence_08\n\n   password: aalmconfluence08\n\n \n\n2. Schema : aalm_confluence_09\n\n   password: aalmconfluence09",
+			"settings":
+			{
+				"buffer_size": 1588,
+				"line_ending": "Windows",
+				"name": "Oracle Server: gorapre12.srv.volvo.com"
+			}
+		},
+		{
+			"file": "app/test/sentMailLogEventTest.js",
+			"settings":
+			{
+				"buffer_size": 798,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/git-views/vospcq/repo/vospCqLocalDb/pom.xml",
+			"settings":
+			{
+				"buffer_size": 6154,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "C:\\tools\\ruby200\\bin;C:\\Python34\\;C:\\Python34\\Scripts;C:\\oraclexe\\app\\oracle\\product\\11.2.0\\server\\bin;c:\\Oracle\\32bitClient\\bin;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\QuickTime\\QTSystem\\;C:\\Program Files\\SlikSvn\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Git\\cmd;C:\\Program Files (x86)\\CloudFoundry;C:\\Program Files (x86)\\Heroku\\bin;C:\\Program Files (x86)\\git\\cmd;C:\\Program Files (x86)\\Git\\bin;C:\\Program Files\\Microsoft Windows Performance Toolkit\\;C:\\ProgramData\\chocolatey\\bin;C:\\Tools\\gradle-2.0\\bin;c:\\Program Files (x86)\\GnuWin32\\bin;C:\\Program Files\\Perforce;C:\\Tools\\Sublime3\n\n%JVS_HOME%;%M2_HOME%\\bin;%DERBY_HOME%\\bin;%CATALINA_HOME%\\bin;%GROOVY_HOME%\\bin;%JAVA_HOME%\\bin;C:\\Users\\bpl4605\\AppData\\Roaming\\npm;C:\\Users\\bpl4605\\.babun",
+			"settings":
+			{
+				"buffer_size": 869,
+				"line_ending": "Windows",
+				"name": "C:\\tools\\ruby200\\bin;C:\\Python34\\;C:\\Python34\\Scri"
+			}
+		},
+		{
+			"file": "/C/Tools/Sublime3/Data/Packages/User/Preferences.sublime-settings",
+			"settings":
+			{
+				"buffer_size": 226,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Tools/Sublime3/Data/Packages/User/Default (Windows).sublime-keymap",
+			"settings":
+			{
+				"buffer_size": 1841,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/git-views/vospcq/repo/vospCqLocalDb/src/main/sql/data/vospcq/TRANSLATION_TEXT/TRANSLATION_TEXT.sql",
+			"settings":
+			{
+				"buffer_size": 21207058,
 				"line_ending": "Windows"
 			}
 		},
@@ -326,105 +400,61 @@
 			"file": "app/models/subscriber.js",
 			"settings":
 			{
-				"buffer_size": 4283,
+				"buffer_size": 4771,
 				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/mailStatisticWraper.js",
-			"settings":
-			{
-				"buffer_size": 3899,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/scheduleMessages.js",
-			"settings":
-			{
-				"buffer_size": 1381,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/models/scheduledMessage.js",
-			"settings":
-			{
-				"buffer_size": 540,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/sendManager.js",
-			"settings":
-			{
-				"buffer_size": 721,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/test/mailStatisticWraperTest.js",
-			"settings":
-			{
-				"buffer_size": 4407,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/sendService.js",
-			"settings":
-			{
-				"buffer_size": 887,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/emailStatistic.js",
-			"settings":
-			{
-				"buffer_size": 2088,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "config/env/test.js",
-			"settings":
-			{
-				"buffer_size": 995,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "config/env/all.js",
-			"settings":
-			{
-				"buffer_size": 339,
-				"line_ending": "Unix"
 			}
 		},
 		{
 			"file": "config/env/development.js",
 			"settings":
 			{
-				"buffer_size": 349,
+				"buffer_size": 430,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "server.js",
+			"file": "app/utility/mails/multiSender.js",
 			"settings":
 			{
-				"buffer_size": 1094,
-				"line_ending": "Unix"
+				"buffer_size": 746,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/utility/mails/senderController.js",
+			"settings":
+			{
+				"buffer_size": 466,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "scripts/GMAIL_CREDENTIALS.json",
+			"settings":
+			{
+				"buffer_size": 773,
+				"line_ending": "Windows"
 			}
 		}
 	],
 	"build_system": "Packages/User/mocha.sublime-build",
 	"command_palette":
 	{
-		"height": 311.0,
+		"height": 196.0,
 		"selected_items":
 		[
+			[
+				"jshin",
+				"JSHint: Set Linting Preferences"
+			],
+			[
+				"js",
+				"JSHint"
+			],
+			[
+				"jshi",
+				"JSHint"
+			],
 			[
 				"for",
 				"Format: Javascript"
@@ -559,13 +589,92 @@
 	},
 	"expanded_folders":
 	[
-		"/C/git-views/efektjow/campaign_sender",
-		"/C/git-views/efektjow/campaign_sender/app",
-		"/C/git-views/efektjow/campaign_sender/config",
-		"/C/git-views/efektjow/campaign_sender/config/env"
+		"/C/git-views/efektjow/mails/campaign_sender",
+		"/C/git-views/efektjow/mails/campaign_sender/app",
+		"/C/git-views/efektjow/mails/campaign_sender/app/models",
+		"/C/git-views/efektjow/mails/campaign_sender/app/test",
+		"/C/git-views/efektjow/mails/campaign_sender/app/test/config",
+		"/C/git-views/efektjow/mails/campaign_sender/scripts"
 	],
 	"file_history":
 	[
+		"/C/git-views/efektjow/mails/campaign_sender/node_modules/autolinker/.jshintrc",
+		"/C/git-views/efektjow/mails/campaign_sender/node_modules/cheerio/.jshintrc",
+		"/C/git-views/efektjow/mails/campaign_sender/node_modules/connect-mongo/.jshintrc",
+		"/C/git-views/efektjow/mails/campaign_sender/node_modules/nodemailer/.jshintrc",
+		"/C/git-views/efektjow/mails/campaign_sender/node_modules/nodemailer-stub-transport/.jshintrc",
+		"/C/git-views/efektjow/mails/campaign_sender/node_modules/rewire/.jshintrc",
+		"/C/git-views/efektjow/mails/campaign_sender/node_modules/underscore-node/.jshintrc",
+		"/C/git-views/efektjow/mails/campaign_sender/node_modules/xoauth2/.jshintrc",
+		"/C/git-views/efektjow/mails/campaign_sender/node_modules/cheerio/test/.jshintrc",
+		"/C/git-views/efektjow/mails/campaign_sender/node_modules/body-parser/node_modules/qs/.jshintrc",
+		"/C/git-views/efektjow/mails/campaign_sender/node_modules/compression/node_modules/debug/.jshintrc",
+		"/C/git-views/efektjow/mails/campaign_sender/node_modules/connect-mongo/node_modules/debug/.jshintrc",
+		"/C/git-views/efektjow/mails/campaign_sender/node_modules/express/node_modules/debug/.jshintrc",
+		"/C/git-views/efektjow/mails/campaign_sender/node_modules/express/node_modules/qs/.jshintrc",
+		"/C/git-views/efektjow/mails/campaign_sender/node_modules/express-session/node_modules/debug/.jshintrc",
+		"/C/git-views/efektjow/mails/campaign_sender/node_modules/faye/node_modules/tough-cookie/.jshintrc",
+		"/C/git-views/efektjow/mails/campaign_sender/node_modules/faye/node_modules/tunnel-agent/.jshintrc",
+		"/C/git-views/efektjow/mails/campaign_sender/node_modules/method-override/node_modules/debug/.jshintrc",
+		"/C/git-views/efektjow/mails/campaign_sender/node_modules/morgan/node_modules/debug/.jshintrc",
+		"/C/git-views/efektjow/mails/campaign_sender/node_modules/nodemailer/node_modules/buildmail/.jshintrc",
+		"/C/git-views/efektjow/mails/campaign_sender/node_modules/nodemailer/node_modules/nodemailer-direct-transport/.jshintrc",
+		"/C/git-views/efektjow/mails/campaign_sender/node_modules/nodemailer/node_modules/nodemailer-smtp-transport/.jshintrc",
+		"/C/git-views/efektjow/mails/campaign_sender/node_modules/passport/node_modules/passport-strategy/.jshintrc",
+		"/C/git-views/efektjow/mails/campaign_sender/node_modules/express-session/node_modules/uid-safe/node_modules/base64-url/.jshintrc",
+		"/C/git-views/efektjow/mails/campaign_sender/node_modules/helmet/node_modules/connect/node_modules/debug/.jshintrc",
+		"/C/git-views/efektjow/mails/campaign_sender/node_modules/nodemailer/node_modules/buildmail/node_modules/addressparser/.jshintrc",
+		"/C/git-views/efektjow/mails/campaign_sender/node_modules/nodemailer/node_modules/nodemailer-direct-transport/node_modules/smtp-connection/.jshintrc",
+		"/C/git-views/efektjow/mails/campaign_sender/node_modules/nodemailer/node_modules/nodemailer-smtp-transport/node_modules/smtp-connection/.jshintrc",
+		"/C/git-views/efektjow/mails/campaign_sender/node_modules/cheerio/node_modules/htmlparser2/test/Events/10-crazy-attrib.json",
+		"/C/git-views/efektjow/mails/campaign_sender/node_modules/cheerio/node_modules/htmlparser2/test/Events/19-named_entities.json",
+		"/C/git-views/vospcq/repo/vospCqLocalDb/src/main/sql/data/vospcq/TRANSLATION_CODE/TRANSLATION_CODE.sql",
+		"/C/git-views/efektjow/mails/campaign_sender/todo.md",
+		"/C/git-views/efektjow/mails/campaign_sender/node_modules/cheerio/lib/api/traversing.js",
+		"/C/git-views/efektjow/mails/campaign_sender/node_modules/cheerio/node_modules/htmlparser2/node_modules/readable-stream/transform.js",
+		"/C/git-views/efektjow/mails/campaign_sender/node_modules/nodemailer-stub-transport/LICENSE",
+		"/C/git-views/efektjow/mails/campaign_sender/node_modules/nodemailer/node_modules/nodemailer-smtp-transport/node_modules/nodemailer-wellknown/LICENSE",
+		"/C/git-views/efektjow/mails/campaign_sender/node_modules/nodemailer/node_modules/nodemailer-direct-transport/node_modules/smtp-connection/src/data-stream.js",
+		"/C/git-views/efektjow/mails/campaign_sender/node_modules/nodemailer/node_modules/nodemailer-smtp-transport/node_modules/nodemailer-wellknown/test.js",
+		"/C/git-views/efektjow/mails/campaign_sender/node_modules/cheerio/node_modules/htmlparser2/node_modules/domutils/lib/manipulation.js",
+		"/C/git-views/efektjow/mails/campaign_sender/app/models/sentMailLogEvent.js",
+		"/C/git-views/efektjow/mails/campaign_sender/node_modules/glob/node_modules/minimatch/node_modules/brace-expansion/node_modules/concat-map/test/map.js",
+		"/C/git-views/efektjow/mails/campaign_sender/node_modules/mongoose/node_modules/mpromise/test/promise.domain.test.js",
+		"/C/git-views/efektjow/mails/campaign_sender/node_modules/events/tests/max-listeners.js",
+		"/C/git-views/efektjow/mails/campaign_sender/app/controllers/sendCampaign.js",
+		"/C/git-views/efektjow/mails/campaign_sender/app/test/senderPoolTest.js",
+		"/C/git-views/efektjow/mails/campaign_sender/app/sendManager.js",
+		"/C/git-views/efektjow/mails/campaign_sender/node_modules/express-session/node_modules/debug/Makefile",
+		"/C/git-views/efektjow/mails/campaign_sender/node_modules/nodemailer/src/nodemailer.js",
+		"/C/git-views/efektjow/mails/campaign_sender/node_modules/express-session/node_modules/depd/lib/compat/callsite-tostring.js",
+		"/C/git-views/efektjow/mails/campaign_sender/server.js",
+		"/C/git-views/efektjow/mails/campaign_sender/app/models/subscriber.js",
+		"/C/git-views/efektjow/mails/campaign_sender/campaign_sender.sublime-project",
+		"/C/git-views/efektjow/mails/campaign_sender/Makefile",
+		"/C/git-views/efektjow/mails/campaign_sender/node_modules/connect-mongo/node_modules/mongodb/lib/mongodb/commands/get_more_command.js",
+		"/C/git-views/efektjow/mails/campaign_sender/node_modules/sinon/GPATH",
+		"//segotx623/got623v002$/segot2ardhn010/vosp-cq/VLDGOT02_NODE02_VOSP-CQ/serverlogs/SystemOut.log",
+		"/C/git-views/vospcq/repo/vospCqJmsTests/connectionTester/src/main/resources/config.groovy",
+		"/C/git-views/vospcq/repo/dragDropAngJsAndGridster/dragdropAngJsAndGridster/.bowerrc",
+		"//segotx623/got623v002$/segot2ardhn010/vosp-cq/INTGOT10_NODE01_VOSP-CQ/serverlogs/SystemOut.log",
+		"/C/git-views/vospcq/repo/vospCqJmsTests/connectionTester/src/main/java/SimplePTP.java",
+		"/C/git-views/efektjow/mails/campaign_sender/app/emailStatistic.js",
+		"/C/git-views/efektjow/mails/campaign_sender/config/express.js",
+		"/C/git-views/efektjow/mails/campaign_sender/app/test/campaignModelTest.js",
+		"/C/git-views/efektjow/mails/campaign_sender/app/models/campaign.js",
+		"/C/git-views/efektjow/mails/campaign_sender/config/config.js",
+		"/C/git-views/efektjow/mails/campaign_sender/node_modules/connect-mongo/lib/connect-mongo.js",
+		"/C/git-views/efektjow/mails/campaign_sender/node_modules/mongoose/examples/express/connection-sharing/modelA.js",
+		"/C/git-views/efektjow/mails/campaign_sender/config/env/development.js",
+		"/C/git-views/efektjow/mails/campaign_sender/config/env/all.js",
+		"/C/git-views/efektjow/mails/campaign_sender/config/env/test.js",
+		"/C/git-views/efektjow/mails/campaign_sender/app/sendService.js",
+		"/C/git-views/efektjow/mails/campaign_sender/app/test/mailStatisticWraperTest.js",
+		"/C/git-views/efektjow/mails/campaign_sender/app/models/scheduledMessage.js",
+		"/C/git-views/efektjow/mails/campaign_sender/app/scheduleMessages.js",
+		"/C/git-views/efektjow/mails/campaign_sender/app/routes/redirectingUrls.js",
+		"/C/git-views/efektjow/mails/campaign_sender/app/models/redirectingTable.js",
+		"/C/git-views/efektjow/mails/campaign_sender/app/mailStatisticWraper.js",
 		"/C/git-views/efektjow/campaign_sender/node_modules/glob/node_modules/once/node_modules/wrappy/wrappy.js",
 		"/C/git-views/efektjow/campaign_sender/node_modules/glob/node_modules/inflight/node_modules/wrappy/wrappy.js",
 		"/C/git-views/efektjow/campaign_sender/node_modules/cheerio/node_modules/htmlparser2/lib/WritableStream.js",
@@ -616,84 +725,7 @@
 		"/C/git-views/efektjow/campaign_sender/sendManager.js",
 		"/C/git-views/efektjow/campaign_sender/routes/redirectingUrls.js",
 		"/C/git-views/efektjow/campaign_sender/package.json",
-		"/C/git-views/efektjow/campaign_sender/config/env/test.js",
-		"/C/git-views/efektjow/campaign_sender/config/env/production.js",
-		"//segotx623/got623v002$/segot2ardhn010/vosp-cq/VLDGOT02_NODE02_VOSP-CQ/serverlogs/SystemOut.log",
-		"/C/git-views/efektjow/campaign_sender/models/subscriber.js",
-		"/C/git-views/efektjow/campaign_sender/config/config-test.js",
-		"/C/git-views/efektjow/campaign_sender/test/scheduleMessagesTest.js",
-		"/C/git-views/efektjow/campaign_sender/test/sendServiceTest.js",
-		"/C/git-views/efektjow/campaign_sender/test/campaignModelTest.js",
-		"/C/git-views/efektjow/campaign_sender/scheduleMessages.js",
-		"/C/git-views/efektjow/campaign_sender/test/redirectingTest.js",
-		"/C/git-views/efektjow/campaign_sender/mailStatisticWraper.js",
-		"/C/Users/bpl4605/Desktop/users.csv",
-		"/C/git-views/efektjow/campaign_sender/scripts/insertUserFromLandingPage.mongo",
-		"/C/git-views/efektjow/campaign_sender/efektjow.js",
-		"/C/git-views/efektjow/campaign_sender/test/subscriebersTest.js",
-		"/C/git-views/efektjow/campaign_sender/test/mailStatisticWraperTest.js",
-		"/C/git-views/efektjow/campaign_sender/models/redirectingTable.js",
-		"/C/git-views/efektjow/campaign_sender/config-test.js",
-		"/C/git-views/efektjow/campaign_sender/sendService.js",
-		"/C/git-views/efektjow/campaign_sender/init.js",
-		"/C/git-views/efektjow/campaign_sender/index.html",
-		"/C/git-views/efektjow/campaign_sender/node_modules/autolinker/src/Util.js",
-		"/C/git-views/efektjow/campaign_sender/utility/globalEventBus.js",
-		"/C/git-views/efektjow/campaign_sender/node_modules/sinon/node_modules/util/support/isBuffer.js",
-		"/C/git-views/efektjow/campaign_sender/node_modules/mongoose/node_modules/mpromise/test/promises.Aplus.js",
-		"/C/git-views/efektjow/campaign_sender/node_modules/mongoose/node_modules/mongodb/node_modules/bson/lib/bson/symbol.js",
-		"/C/git-views/efektjow/campaign_sender/node_modules/mongoose/node_modules/mongodb/node_modules/kerberos/lib/win32/wrappers/security_buffer.cc",
-		"/C/git-views/efektjow/campaign_sender/node_modules/mongoose/node_modules/mongodb/node_modules/kerberos/lib/win32/wrappers/security_buffer.js",
-		"/C/git-views/efektjow/campaign_sender/node_modules/mongoose/node_modules/mongodb/node_modules/kerberos/lib/win32/wrappers/security_buffer_descriptor.cc",
-		"/C/git-views/efektjow/campaign_sender/node_modules/autolinker/tests/index.html",
-		"/C/git-views/efektjow/campaign_sender/test/sendMessagesTest.js",
-		"/C/git-views/efektjow/campaign_sender/models/scheduledMessage.js",
-		"/C/git-views/efektjow/campaign_sender/sendMessages.js",
-		"/C/git-views/efektjow/campaign_sender/sendGrid.js",
-		"/C/git-views/efektjow/campaign_sender/emailStatistic.js",
-		"/C/git-views/efektjow/campaign_sender/node_modules/mongoose/static.js",
-		"/C/git-views/efektjow/campaign_sender/node_modules/nodemailer-stub-transport/src/stub-transport.js",
-		"/C/git-views/efektjow/campaign_sender/test/scheduledMessageTest.js",
-		"/C/git-views/efektjow/campaign_sender/models/campaign.js",
-		"/C/git-views/efektjow/campaign_sender/test/redirectingTableTest.js",
-		"/C/git-views/efektjow/campaign_sender/node_modules/mongoose/contRun.sh",
-		"/C/git-views/efektjow/campaign_sender/node_modules/cheerio/Readme.md",
-		"/C/git-views/efektjow/campaign_sender/node_modules/mongoose/node_modules/mongodb/node_modules/kerberos/test/win32/security_credentials_tests.js",
-		"/C/git-views/efektjow/campaign_sender/node_modules/faye/node_modules/tough-cookie/generate-pubsuffix.js",
-		"/C/git-views/efektjow/campaign_sender/node_modules/cheerio/coverage/lcov-report/cheerio/lib/api/traversing.js.html",
-		"/C/git-views/efektjow/campaign_sender/node_modules/cheerio/node_modules/htmlparser2/test/Events/19-named_entities.json",
-		"/C/git-views/efektjow/campaign_sender/node_modules/autolinker/src/match/Url.js",
-		"/C/git-views/efektjow/campaign_sender/node_modules/mongoose/node_modules/mongodb/lib/mongodb/connection/url_parser.js",
-		"/C/git-views/efektjow/campaign_sender/node_modules/rewire/lib/rewire.js",
-		"/C/git-views/efektjow/campaign_sender/node_modules/cheerio/node_modules/htmlparser2/node_modules/readable-stream/lib/_stream_duplex.js",
-		"/C/git-views/efektjow/campaign_sender/node_modules/autolinker/gh-pages/docs/source/Url.html",
-		"/C/git-views/efektjow/campaign_sender/node_modules/autolinker/gh-pages/docs/source/HtmlTag.html",
-		"/C/git-views/efektjow/campaign_sender/node_modules/cheerio/node_modules/htmlparser2/node_modules/readable-stream/lib/_stream_writable.js",
-		"/C/git-views/efektjow/campaign_sender/node_modules/autolinker/gh-pages/docs/output/Autolinker.HtmlTag.js",
-		"/C/git-views/efektjow/campaign_sender/node_modules/mongoose/CONTRIBUTING.md",
-		"/C/git-views/efektjow/campaign_sender/node_modules/events/tests/max-listeners.js",
-		"/C/git-views/efektjow/campaign_sender/node_modules/nodemailer/src/nodemailer.js",
-		"/C/git-views/efektjow/campaign_sender/node_modules/autolinker/gh-pages/docs/output/Autolinker.match.Email.js",
-		"/C/git-views/efektjow/campaign_sender/node_modules/autolinker/gh-pages/docs/source/Email.html",
-		"/C/git-views/efektjow/campaign_sender/node_modules/autolinker/src/match/Email.js",
-		"/C/git-views/efektjow/campaign_sender/fajeSubscriber.js",
-		"/C/git-views/efektjow/campaign_sender/test/mailStatisticWraper.js",
-		"/C/Tools/Sublime3/Data/Packages/User/Preferences.sublime-settings",
-		"/C/Tools/Sublime3/Data/Packages/Default/Preferences.sublime-settings",
-		"/C/git-views/efektjow/campaign_sender/node_modules/sinon/node_modules/formatio/node_modules/samsam/jsTestDriver.conf",
-		"/C/git-views/efektjow/campaign_sender/node_modules/mongoose/node_modules/mpromise/.idea/jsLibraryMappings.xml",
-		"/C/git-views/efektjow/campaign_sender/node_modules/mongoose/node_modules/ms/test/support/jquery.js",
-		"/C/git-views/efektjow/campaign_sender/globalEventBus.js",
-		"/C/git-views/playground/.bowerrc",
-		"/C/Users/bpl4605/.gitconfig",
-		"/C/git-views/efektjow/campaign_sender/node_modules/faye/node_modules/faye-websocket/node_modules/websocket-driver/lib/websocket/driver/hybi/message.js",
-		"/C/git-views/efektjow/campaign_sender/events.js",
-		"/C/git-views/efektjow/campaign_sender/todo.md",
-		"/C/Users/bpl4605/Desktop/majaGoraczka.txt",
-		"/C/Tools/Sublime3/Data/Packages/User/mocha.sublime-build",
-		"/C/Tools/Sublime3/sublime.bat",
-		"/C/git-views/efektjow/campaign_sender/node_modules/underscore-node/lib/.idea/scopes/scope_settings.xml",
-		"/C/git-views/efektjow/campaign_sender/node_modules/underscore-node/lib/underscore.js"
+		"/C/git-views/efektjow/campaign_sender/config/env/test.js"
 	],
 	"find":
 	{
@@ -715,6 +747,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"java",
+			"index ",
+			"transa",
+			"stubTransport",
 			"var entry = {",
 			"getUnsubscribeLink",
 			"redirecitngUrlMap",
@@ -838,10 +874,6 @@
 			"table.",
 			"propertiesFile",
 			"table",
-			"name",
-			"Name",
-			"name",
-			"Name",
 			"name"
 		],
 		"highlight": true,
@@ -873,319 +905,24 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/routes/redirectingUrls.js",
+					"file": "config/gmailSenders.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1536,
+						"buffer_size": 959,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								798,
-								798
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Better JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false,
-							"word_separators": "./\\\\()\\\"\\'-:,.;<>~!@#%^&*|+=[]{}`~?"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/models/redirectingTable.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 980,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								191,
-								186
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Better JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false,
-							"word_separators": "./\\\\()\\\"\\'-:,.;<>~!@#%^&*|+=[]{}`~?"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "app/models/subscriber.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4283,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3426,
-								3426
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Better JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2073.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "app/mailStatisticWraper.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3899,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3569,
-								3569
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Better JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1876.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "app/scheduleMessages.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1381,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								663,
-								663
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Better JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false,
-							"word_separators": "./\\\\()\\\"\\'-:,.;<>~!@#%^&*|+=[]{}`~?"
-						},
-						"translation.x": 535.0,
-						"translation.y": 276.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "app/models/scheduledMessage.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 540,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								350,
-								350
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Better JavaScript/JavaScript.tmLanguage",
-							"word_separators": "./\\\\()\\\"\\'-:,.;<>~!@#%^&*|+=[]{}`~?"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 11,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "app/sendManager.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 721,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								586,
-								586
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Better JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "app/test/mailStatisticWraperTest.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4407,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3027,
-								3037
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Better JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 946.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 12,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "app/sendService.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 887,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								735,
-								735
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Better JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false,
-							"word_separators": "./\\\\()\\\"\\'-:,.;<>~!@#%^&*|+=[]{}`~?"
-						},
-						"translation.x": 0.0,
-						"translation.y": 181.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "app/emailStatistic.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2088,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1446,
-								1446
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Better JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 127.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "config/env/test.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 995,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								990,
-								990
+								123,
+								140
 							]
 						],
 						"settings":
@@ -1195,7 +932,303 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 218.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/test/config/gmailSenderTests.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1594,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								582,
+								582
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Better JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"word_separators": "./\\\\()\\\"\\'-:,.;<>~!@#%^&*|+=[]{}`~?"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/C/Tools/Sublime3/Data/Packages/JSHint Gutter/.jshintrc",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 725,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								722,
+								722
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1588,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1588,
+								1588
+							]
+						],
+						"settings":
+						{
+							"auto_name": "Oracle Server: gorapre12.srv.volvo.com",
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1814.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/test/sentMailLogEventTest.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 798,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								185,
+								186
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Better JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"word_separators": "./\\\\()\\\"\\'-:,.;<>~!@#%^&*|+=[]{}`~?"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/C/git-views/vospcq/repo/vospCqLocalDb/pom.xml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6154,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4166,
+								4166
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/XML/XML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2806.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 869,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								869,
+								869
+							]
+						],
+						"settings":
+						{
+							"auto_name": "C:\\tools\\ruby200\\bin;C:\\Python34\\;C:\\Python34\\Scri",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "/C/Tools/Sublime3/Data/Packages/User/Preferences.sublime-settings",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 226,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Better JavaScript/JSON.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "/C/Tools/Sublime3/Data/Packages/User/Default (Windows).sublime-keymap",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1841,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2,
+								2
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Better JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "/C/git-views/vospcq/repo/vospCqLocalDb/src/main/sql/data/vospcq/TRANSLATION_TEXT/TRANSLATION_TEXT.sql",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 21207058,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								20589997,
+								20589997
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SQL/SQL.tmLanguage",
+							"tab_size": 3,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1377602.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "app/models/subscriber.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4771,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4771,
+								4745
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Better JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 9,
@@ -1203,48 +1236,19 @@
 				},
 				{
 					"buffer": 11,
-					"file": "config/env/all.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 339,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								294,
-								305
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Better JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 10,
-					"type": "text"
-				},
-				{
-					"buffer": 12,
 					"file": "config/env/development.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 349,
+						"buffer_size": 430,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								194,
-								234
+								128,
+								171
 							]
 						],
 						"settings":
@@ -1255,36 +1259,95 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 13,
+					"stack_index": 12,
 					"type": "text"
 				},
 				{
-					"buffer": 13,
-					"file": "server.js",
+					"buffer": 12,
+					"file": "app/utility/mails/multiSender.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1094,
+						"buffer_size": 746,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								939,
-								939
+								230,
+								230
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/Better JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false,
 							"word_separators": "./\\\\()\\\"\\'-:,.;<>~!@#%^&*|+=[]{}`~?"
 						},
 						"translation.x": 0.0,
-						"translation.y": 460.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "app/utility/mails/senderController.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 466,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								104,
+								104
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Better JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"word_separators": "./\\\\()\\\"\\'-:,.;<>~!@#%^&*|+=[]{}`~?"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "scripts/GMAIL_CREDENTIALS.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 773,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								359
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Better JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": 2892.0,
+						"translation.y": -0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 14,
 					"type": "text"
 				}
 			]
@@ -1341,6 +1404,50 @@
 		"selected_items":
 		[
 			[
+				"sub",
+				"app\\models\\subscriber.js"
+			],
+			[
+				"sentmailev",
+				"app\\models\\sentMailEventLog.js"
+			],
+			[
+				"dev",
+				"config\\env\\development.js"
+			],
+			[
+				"sendercon",
+				"app\\utility\\mails\\senderController.js"
+			],
+			[
+				"mult",
+				"app\\utility\\mails\\multiSender.js"
+			],
+			[
+				"gmai",
+				"app\\test\\config\\gmailSenderTests.js"
+			],
+			[
+				"gma",
+				"config\\gmailSenders.js"
+			],
+			[
+				"sendepoo",
+				"app\\test\\senderPoolTest.js"
+			],
+			[
+				"ema",
+				"app\\emailStatistic.js"
+			],
+			[
+				"camp",
+				"app\\controllers\\sendCampaign.js"
+			],
+			[
+				"sendc",
+				"app\\controllers\\sendCampaign.js"
+			],
+			[
 				"wrap",
 				"app\\mailStatisticWraper.js"
 			],
@@ -1355,10 +1462,6 @@
 			[
 				"mails",
 				"app\\mailStatisticWraper.js"
-			],
-			[
-				"sub",
-				"app\\models\\subscriber.js"
 			],
 			[
 				"mai",
@@ -1431,10 +1534,6 @@
 			[
 				"redi",
 				"app\\models\\redirectingTable.js"
-			],
-			[
-				"ema",
-				"app\\emailStatistic.js"
 			],
 			[
 				"sendman",
@@ -1667,7 +1766,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 342.0,
+	"side_bar_width": 248.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

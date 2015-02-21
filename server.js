@@ -26,7 +26,7 @@ var app = require('./config/express')(db);
 // Start the app by listening on <port>
 app.listen(config.port);
 
-require('./app/utility/sendingMailsJob');
+require('./config/sendingMailsJob');
 
 var emailStatistic = require('./app/emailStatistic');
 // Expose app

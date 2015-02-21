@@ -30,16 +30,6 @@ describe('Send manager:', function(){
 			});
 	});
 
-
-
-/*	beforeEach(function(done) {
-		ScheduledMessage.create(createInvitationMail(details),
-			function(err,doc) {
-				console.log('Err: ',err);
-				done();
-			});
-	});*/
-
 	afterEach(function(done) {
 		ScheduledMessage.remove({},function(err){
 			if (err) {
@@ -52,10 +42,11 @@ describe('Send manager:', function(){
 	it('find all ready to send messages and send out them all', function(done){
 		senderManager.sendAllMessages(function(err,response) {
 			assert.equal(null,err);
-			console.log("err " + err);
-			console.log("response " + response);
-			//response.should.have.property('sent',2);
-			done();
+			mailEventLog.sentWith24h(function(err,sent) {
+				should.not.exist(err);
+				sent.should.equal(2);
+				done();
+			});
 		}); 
 	});
 
