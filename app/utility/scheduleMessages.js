@@ -16,7 +16,11 @@ var scheduleMessages = {
 				cb(err);
 				return;
 			}
-			Subscriber.model.find({}, function(err, subscribers) {
+			var parameter = {};
+			if (data.source) {
+				parameter = {source : data.source};
+			}
+			Subscriber.model.find(parameter, function(err, subscribers) {
 				var messages = [];
 				_.each(subscribers, function(subscriber) {					
 					if (subscriber.campaigns === undefined || subscriber.campaigns === null  || (_.findIndex(subscriber.campaigns,function(item) {return doc.id == item.campaignId;}) == -1)) {
