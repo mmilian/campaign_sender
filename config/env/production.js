@@ -1,6 +1,6 @@
 'use strict';
 
-var gmailSender = require('gmailSenders');
+var gmailSenders = require('../gmailSenders');
 var multiSender = require('../../app/utility/mails/multiSender')(gmailSenders);
 
 module.exports = {
