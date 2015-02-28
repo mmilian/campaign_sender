@@ -28,7 +28,7 @@ app.listen(config.port);
 
 require('./config/sendingMailsJob');
 
-var emailStatistic = require('./app/emailStatistic');
+var emailStatistic = require('./app/utility/emailStatistic');
 // Expose app
 exports = module.exports = app;
 

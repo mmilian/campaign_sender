@@ -1,7 +1,7 @@
 var async = require("async");
 var EventEmitter = require("events").EventEmitter;
 
-var bus = require("./utility/globalEventBus.js");
+var bus = require("./globalEventBus.js");
 
 var sendService = {
 
@@ -29,15 +29,21 @@ var sendService = {
 				response.sent++;
 				response.to.push(message.to);
 				response.transport.push(info);
+				//TODO test for that
+				console.log(err);
 				if (err) { 
-					console.log(err);
+					if (!err.message.localeCompare("no available senders")) {
+						console.log("Set null");						
+						message.sentLog = null;
+					} else 
 					message.sentLog = JSON.stringify(err);
 				}
+				message.save();
 				if (info) {
 					bus.emitEvent('mail_sent',{campaignId : message.campaignId, email : message.to});
 					message.sentLog = JSON.stringify(info);
-				}
-				message.save();
+				message.remove();				
+				}				
 				callback();
 			});					
 		}; 

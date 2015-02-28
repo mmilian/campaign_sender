@@ -1,8 +1,8 @@
-var subscriber = require('./models/subscriber');
-var bus = require("./utility/globalEventBus.js");
-var redirectingTable = require("./models/redirectingTable.js");
+var subscriber = require('../models/subscriber');
+var bus = require("./globalEventBus.js");
+var redirectingTable = require("../models/redirectingTable.js");
 var mongoose = require("mongoose");  
-var	config = require("../config/config");
+var	config = require("../../config/config");
 
 
 var EmailStatistic = function() {

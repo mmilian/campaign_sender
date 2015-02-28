@@ -6,13 +6,12 @@ var senderController = require('./senderController');
 var multiSender = function(senders) {
 
 	var _senders = [];	
-	var pointer = 0;
+
 	_.forEach(senders,function(item) {
-		var limit = null;
-		if (item.transporter.options.service === 'gmail')
-			limit=500;
-		_senders.push(senderController(item,limit));
+		_senders.push(senderController(item.sender,item.limit,item.name));
 	});
+
+	console.log("We have " + _senders.length + " senders!");
 
 	var getFirstAvailableSender = function() {
 		var sender = _.find(_senders, function(sender) {

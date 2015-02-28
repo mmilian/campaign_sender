@@ -1,6 +1,6 @@
 var	config = require("../../config/config");
-var mailStatisticWraper = require("../mailStatisticWraper")(config);
-var scheduleMessages = require("../scheduleMessages");
+var mailStatisticWraper = require("../utility/mailStatisticWraper")(config);
+var scheduleMessages = require("../utility/scheduleMessages");
 
 
 exports.create = function(req, res) {

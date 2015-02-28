@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var ObjectIdSchema = Schema.ObjectId;
 var ObjectId = mongoose.Types.ObjectId;
-var redirectingTable = require("./models/redirectingTable.js");
+var redirectingTable = require("../models/redirectingTable.js");
 var cheerio = require('cheerio');
 
 	var MailUtils = function(config) {

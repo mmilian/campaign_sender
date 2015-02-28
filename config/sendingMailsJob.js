@@ -1,7 +1,7 @@
 //schedule sending messages
-var SenderManager = require('../sendManager');
-var	config = require("../../config/config");
-var bus = require("./globalEventBus.js");
+var SenderManager = require('../app/utility/sendManager');
+var	config = require("./config");
+var bus = require("../app/utility/globalEventBus.js");
 
 var senderManager = new SenderManager(config);
 

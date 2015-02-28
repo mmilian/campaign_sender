@@ -1,10 +1,10 @@
-var Campaign = require('./models/campaign');
-var	config = require("../config/config");
+var Campaign = require('../models/campaign');
+var	config = require("../../config/config");
 var mongoose = require("mongoose");
 var _ = require('lodash');
-var Subscriber = require('./models/subscriber');
-var ScheduledMessage = require("./models/scheduledMessage.js");
-var mailStatisticWraper = require("./mailStatisticWraper")(config);
+var Subscriber = require('../models/subscriber');
+var ScheduledMessage = require("../models/scheduledMessage.js");
+var mailStatisticWraper = require("../utility/mailStatisticWraper")(config);
 
 var scheduleMessages = {
 	scheduleCampaignToAllSubscribers: function(data,wrapMailInTrackingUrls,cb) {

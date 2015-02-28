@@ -1,7 +1,7 @@
 var nodemailer = require('nodemailer');
 var stubTransport = require('nodemailer-stub-transport');
 var sendingEngine = require('./sendService');
-var ScheduledMessage = require("./models/scheduledMessage.js");
+var ScheduledMessage = require("../models/scheduledMessage.js");
 
 
 var SendManager = function(config) {
