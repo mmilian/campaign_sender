@@ -20,7 +20,7 @@ var scheduleMessages = {
 			if (data.source) {
 				parameter = {source : data.source};
 			}
-			Subscriber.model.find(parameter, function(err, subscribers) {
+			Subscriber.model.find(parameter).limit(1000).exec(function(err, subscribers) {
 				var messages = [];
 				_.each(subscribers, function(subscriber) {					
 					if (subscriber.campaigns === undefined || subscriber.campaigns === null  || (_.findIndex(subscriber.campaigns,function(item) {return doc.id == item.campaignId;}) == -1)) {
@@ -44,7 +44,7 @@ var scheduleMessages = {
 				});
 			});
 		});
-	}
+}
 }
 
 

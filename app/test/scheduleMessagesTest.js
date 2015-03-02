@@ -1,13 +1,13 @@
 var should = require('should');
 var assert = require("assert");
-var Campaign = require('../models/Campaign');
 var	config = require("../../config/config");
 var mongoose = require("mongoose");
 var _ = require('lodash');
 var Subscriber = require('../models/subscriber');
 var ScheduledMessage = require("../models/scheduledMessage.js");
-var mailStatisticWraper = require("../mailStatisticWraper")(config);
-var scheduleMessages = require("../scheduleMessages");
+var Campaign = require('../models/campaign');
+var mailStatisticWraper = require("../utility/mailStatisticWraper")(config);
+var scheduleMessages = require("../utility/scheduleMessages");
 
 var yesterday = (function(d) {
 	d.setDate(d.getDate() - 1);

@@ -48,4 +48,6 @@ var CampaignSchema = new Schema({
 	}
 });
 
-module.exports = mongoose.model('Campaigns', CampaignSchema);
+var model = mongoose.model('Campaigns', CampaignSchema);
+
+module.exports = model;
