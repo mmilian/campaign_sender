@@ -9,10 +9,8 @@ var senderController = function(sender,limit,name) {
 	const _limitPerDay = limit || 499;
 	var _sentPerDay = 0;
 
-	console.log("senderId " + senderId + "limit " + _limitPerDay);
-
 	setInterval(function() { 
-		_sentPerDay = sentMailLogEvent.sentWithin24h({senderId : senderId},function(err,doc) {
+		sentMailLogEvent.sentWithin24h({senderId : senderId},function(err,doc) {
 			if (!err) {
 				console.log("Counter " + doc.counter + " for senderId " + senderId);				
 				_sentPerDay = doc.counter
@@ -21,14 +19,12 @@ var senderController = function(sender,limit,name) {
 	},5000); 
 
 	eventEmitter.on('sent_mail_log_event_' + senderId,function() {
-		//sentMailLogEvent.create({senderId : 'senderId'},function(err,log_event) {
 		sentMailLogEvent.create({senderId : senderId},function(err,res) {
 			console.log('sent_mail_log_event for sender ' + senderId + " Event: " + res);
 		});
 	});
 
 	_isAvailable = function(cb) {
-		//console.log("_limitPerDay " + _limitPerDay + "; _sentPerDay"  + _sentPerDay);
 		if (_limitPerDay > _sentPerDay) {			
 			return true;
 		}
