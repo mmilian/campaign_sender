@@ -14,7 +14,7 @@ var senderController = function(sender,limit,name) {
 	setInterval(function() { 
 		_sentPerDay = sentMailLogEvent.sentWithin24h({senderId : senderId},function(err,doc) {
 			if (!err) {
-				//console.log("Counter " + doc.counter + " for senderId " + senderId);				
+				console.log("Counter " + doc.counter + " for senderId " + senderId);				
 				_sentPerDay = doc.counter
 			}
 		});
