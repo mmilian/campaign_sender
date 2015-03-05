@@ -13,7 +13,7 @@ var senderController = function(sender,limit,name) {
 		sentMailLogEvent.sentWithin24h({senderId : senderId},function(err,doc) {
 			if (!err) {
 				console.log("Counter " + doc.counter + " for senderId " + senderId);				
-				_sentPerDay = doc.counter
+				_sentPerDay = doc.counter;
 			}
 		});
 	},5000); 
