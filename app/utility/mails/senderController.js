@@ -47,7 +47,8 @@ var senderController = function(sender,limit,name) {
 
 	return {
 		isAvailable : _isAvailable,
-		sendMail : _sendMail
+		sendMail : _sendMail,
+		status : {senderId : senderId, limitPerDay : _limitPerDay, sentToday : _sentPerDay}
 	}
 }
 

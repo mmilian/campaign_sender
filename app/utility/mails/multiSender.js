@@ -28,6 +28,12 @@ var multiSender = function(senders) {
 			} else {
 				cb(new Error("no available senders"));			
 			}
+		},
+		getSenderStatus : function() {
+			return _senders.map(function(item) {
+				console.log(item.status);
+				return item.status;
+			});
 		}
 	}
 };
