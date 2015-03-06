@@ -41,10 +41,14 @@ var senderController = function(sender,limit,name) {
 		});
 	};
 
+	_status = function() {
+		return {senderId : senderId, limitPerDay : _limitPerDay, sentToday : _sentPerDay};
+	}
+
 	return {
 		isAvailable : _isAvailable,
 		sendMail : _sendMail,
-		status : {senderId : senderId, limitPerDay : _limitPerDay, sentToday : _sentPerDay}
+		status : _status
 	}
 }
 
