@@ -4,6 +4,34 @@
 		"selected_items":
 		[
 			[
+				"subs",
+				"subscribers"
+			],
+			[
+				"pa",
+				"parameters"
+			],
+			[
+				"ca",
+				"campaignId"
+			],
+			[
+				"camp",
+				"campaignId"
+			],
+			[
+				"cam",
+				"campaignId"
+			],
+			[
+				"su",
+				"subscribers"
+			],
+			[
+				"se",
+				"senderId"
+			],
+			[
 				"s",
 				"source"
 			],
@@ -57,10 +85,6 @@
 			],
 			[
 				"send",
-				"sendMessages"
-			],
-			[
-				"se",
 				"sendMessages"
 			],
 			[
@@ -154,18 +178,6 @@
 			[
 				"desc",
 				"desc	describe"
-			],
-			[
-				"su",
-				"subscriber"
-			],
-			[
-				"cam",
-				"campaign"
-			],
-			[
-				"ca",
-				"campaignId"
 			],
 			[
 				"campa",
@@ -316,12 +328,12 @@
 		"selected_items":
 		[
 			[
-				"gi",
-				"Git: Status"
-			],
-			[
 				"js",
 				"JSHint"
+			],
+			[
+				"gi",
+				"Git: Status"
 			],
 			[
 				"jsh",
@@ -464,7 +476,7 @@
 				"Set Syntax: Go"
 			]
 		],
-		"width": 400.0
+		"width": 416.0
 	},
 	"console":
 	{
@@ -489,27 +501,32 @@
 	},
 	"file_history":
 	[
+		"/c/Tools/console/vendor/Sublime3/Data/Packages/JSHint Gutter/JSHint.sublime-settings",
+		"/C/git-views/efektjow/mails/campaign_sender/node_modules/body-parser/lib/types/json.js",
 		"/C/git-views/efektjow/mails/campaign_sender/server.js",
+		"/C/git-views/efektjow/mails/campaign_sender/node_modules/events/tests/subclass.js",
+		"/C/git-views/efektjow/mails/campaign_sender/app/test/subscriebersTest.js",
+		"/C/git-views/efektjow/mails/campaign_sender/app/models/scheduledMessage.js",
+		"/C/git-views/efektjow/mails/campaign_sender/app/utility/scheduleMessages.js",
+		"/C/git-views/efektjow/mails/campaign_sender/config/env/production.js",
+		"/C/git-views/efektjow/mails/campaign_sender/package.json",
+		"/C/git-views/efektjow/mails/campaign_sender/config/sendingMailsJob.js",
+		"/C/git-views/efektjow/mails/campaign_sender/app/test/sentMailLogEventTest.js",
+		"/C/git-views/efektjow/mails/campaign_sender/app/models/sentMailLogEvent.js",
 		"/C/git-views/efektjow/mails/campaign_sender/app/test/campaignModelTest.js",
 		"/C/git-views/efektjow/mails/campaign_sender/app/controllers/sendCampaign.js",
 		"/C/git-views/efektjow/mails/campaign_sender/config/config.js",
 		"/C/git-views/efektjow/mails/campaign_sender/app/utility/mails/senderController.js",
 		"/C/git-views/efektjow/mails/campaign_sender/app/utility/mails/multiSender.js",
 		"/C/git-views/efektjow/mails/campaign_sender/config/gmailSenders.js",
-		"/C/git-views/efektjow/mails/campaign_sender/app/models/scheduledMessage.js",
-		"/C/git-views/efektjow/mails/campaign_sender/package.json",
 		"/C/Users/bpl4605/zmieleni.json",
 		"/C/Program Files/MongoDB 2.6 Standard/bin/dump/zmieleni.json",
 		"/C/git-views/efektjow/mails/campaign_sender/Procfile",
-		"/C/git-views/efektjow/mails/campaign_sender/config/sendingMailsJob.js",
-		"/C/git-views/efektjow/mails/campaign_sender/app/test/sentMailLogEventTest.js",
-		"/C/git-views/efektjow/mails/campaign_sender/app/models/sentMailLogEvent.js",
 		"/C/Users/bpl4605/Downloads/client_secret_794405683554-aedfgu5l9b06cqkqt74bepkqa3q7o4r6.apps.googleusercontent.com.json",
 		"/C/Users/bpl4605/Downloads/client_secret_994312918864-bjdfhilq6vb2rugh3p8qc650bs43f0ge.apps.googleusercontent.com.json",
 		"/C/git-views/efektjow/mails/campaign_sender/app/utility/mailStatisticWraper.js",
 		"/C/git-views/efektjow/mails/campaign_sender/todo.md",
 		"/C/git-views/efektjow/mails/campaign_sender/app/test/scheduledMessageTest.js",
-		"/C/git-views/efektjow/mails/campaign_sender/app/utility/scheduleMessages.js",
 		"//segotx623/got623v002$/segot2ardhn010/vosp-cq/VLDGOT02_NODE02_VOSP-CQ/serverlogs/SystemErr.log",
 		"//segotx623/got623v002$/segot2ardhn010/vosp-cq/INTGOT10_NODE01_VOSP-CQ/serverlogs/SystemErr.log",
 		"//segotx623/got623v002$/segot2ardhn010/vosp-cq/INTGOT10_NODE01_VOSP-CQ/serverlogs/SystemOut.log",
@@ -611,12 +628,7 @@
 		"/C/git-views/efektjow/mails/campaign_sender/config/env/all.js",
 		"/C/git-views/efektjow/mails/campaign_sender/app/sendService.js",
 		"/C/git-views/efektjow/mails/campaign_sender/app/test/mailStatisticWraperTest.js",
-		"/C/git-views/efektjow/mails/campaign_sender/app/scheduleMessages.js",
-		"/C/git-views/efektjow/mails/campaign_sender/app/routes/redirectingUrls.js",
-		"/C/git-views/efektjow/mails/campaign_sender/app/mailStatisticWraper.js",
-		"/C/git-views/efektjow/campaign_sender/node_modules/glob/node_modules/once/node_modules/wrappy/wrappy.js",
-		"/C/git-views/efektjow/campaign_sender/node_modules/glob/node_modules/inflight/node_modules/wrappy/wrappy.js",
-		"/C/git-views/efektjow/campaign_sender/node_modules/cheerio/node_modules/htmlparser2/lib/WritableStream.js"
+		"/C/git-views/efektjow/mails/campaign_sender/app/scheduleMessages.js"
 	],
 	"find":
 	{
@@ -639,6 +651,12 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"not.ex",
+			"should.not.exist(err)",
+			"console",
+			"_sentPerDay",
+			"_sentPerDay ",
+			"_sentPerDay",
 			"models/Campaign",
 			"Campaign",
 			",",
@@ -760,13 +778,7 @@
 			"DIRECT_PAYMENT",
 			"market",
 			"]?",
-			"findOccurenceOfTextInFile",
-			"findOccurenceOfTextInFile()",
-			"findOccurenceOfTexts",
-			"findOccurenceOfText",
-			"map",
-			"languageColumn",
-			"columns"
+			"findOccurenceOfTextInFile"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -849,6 +861,42 @@
 		"selected_items":
 		[
 			[
+				"subsc",
+				"app\\models\\subscriber.js"
+			],
+			[
+				"s",
+				"app\\models\\subscriber.js"
+			],
+			[
+				"subscrib",
+				"app\\models\\subscriber.js"
+			],
+			[
+				"sched",
+				"app\\utility\\scheduleMessages.js"
+			],
+			[
+				"gma",
+				"config\\gmailSenders.js"
+			],
+			[
+				"pro",
+				"config\\env\\production.js"
+			],
+			[
+				"sendercon",
+				"app\\utility\\mails\\senderController.js"
+			],
+			[
+				"mul",
+				"app\\utility\\mails\\multiSender.js"
+			],
+			[
+				"co",
+				"config\\config.js"
+			],
+			[
 				"schedu",
 				"app\\utility\\scheduleMessages.js"
 			],
@@ -865,16 +913,8 @@
 				"app\\models\\campaign.js"
 			],
 			[
-				"gma",
-				"config\\gmailSenders.js"
-			],
-			[
 				"schedule",
 				"app\\test\\scheduleMessagesTest.js"
-			],
-			[
-				"sched",
-				"app\\utility\\scheduleMessages.js"
 			],
 			[
 				"pa",
@@ -891,10 +931,6 @@
 			[
 				"gm",
 				"config\\gmailSenders.js"
-			],
-			[
-				"mul",
-				"app\\utility\\mails\\multiSender.js"
 			],
 			[
 				"test",
@@ -959,10 +995,6 @@
 			[
 				"sentmailev",
 				"app\\models\\sentMailEventLog.js"
-			],
-			[
-				"sendercon",
-				"app\\utility\\mails\\senderController.js"
 			],
 			[
 				"mult",
@@ -1103,14 +1135,6 @@
 			[
 				"sendme",
 				"test\\sendMessagesTest.js"
-			],
-			[
-				"co",
-				"config-test.js"
-			],
-			[
-				"s",
-				"models\\subscriber.js"
 			],
 			[
 				"em",

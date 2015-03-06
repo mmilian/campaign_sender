@@ -19,8 +19,8 @@ var Subscriber = function(){
   var _findByEmail = function(email, cb){    
     _model.findOne({email:email}, function(err, doc){      
       cb(err,doc);
-     });    
-   }; 
+    });    
+  }; 
 
   var _register = function(data,success,fail) {
     var newSubscriber = new _model({nick : data.nick, email:data.email});
@@ -82,14 +82,14 @@ var Subscriber = function(){
     };
 
     var _campaignSent  = function(campaignId,email,success,fail) {
-    _findByEmail(email,function(err,subscriber) { 
-      var campaign = _findCampaign(campaignId,subscriber);
-      subscriber.save(function(err) {
-        if (err) 
-          fail(err);
-        success(subscriber);
-      });
-    },fail);
+      _findByEmail(email,function(err,subscriber) { 
+        var campaign = _findCampaign(campaignId,subscriber);
+        subscriber.save(function(err) {
+          if (err) 
+            fail(err);
+          success(subscriber);
+        });
+      },fail);
       //success({email : email, campaigns : [{campaignId : 'campaignId', opened : 1}]});
     };
 
@@ -125,14 +125,26 @@ var Subscriber = function(){
        } else {
         success(doc);
         return;
-       } 
-     });
+      } 
+    });
     },function(err) {
       console.log(err);
       fail(err);
       return;
     });
   };
+
+  _findAllSubscribers = function(parameters,cb) {
+    var pam = {};
+    if (parameters.source) 
+      pam.source = parameters.source;
+    if (parameters.campaignId)
+      pam["campaigns.campaignId"] = {$ne : parameters.campaignId};
+    console.log(pam);
+    _model.find(pam).limit(1000).exec(function(err,subscribers) {
+      cb(err,subscribers);
+    });
+  }  
 
   return {    
     schema : subscriberSchema,    
@@ -142,7 +154,8 @@ var Subscriber = function(){
     campaignOpened : _campaignOpened,
     linkClicked : _linkClicked,
     unsubscribe : _unsubscribed,
-    campaignSent : _campaignSent
+    campaignSent : _campaignSent,
+    findAllSubscribersWhereSourceAndToWhomCampaignWasNotSent : _findAllSubscribers
   }
 }();
 

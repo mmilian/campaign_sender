@@ -12,7 +12,8 @@ exports.create = function(req, res) {
 				message: errorHandler.getErrorMessage(err)
 			});
 		} else {
-			res.json(r);
+			console.log("Response  ", r.scheduledMsg);
+			return res.json(r);
 		}
 	});	
 };

@@ -23,23 +23,45 @@ describe("Subscribers:", function(){
     var currentSubscriber = null;  
 
     beforeEach(function(done){    
-    //add some test data    
-    subscriber.register({nick:'nick',email:'test@test.com'}, function(doc){      
-      currentSubscriber = doc;      
-      done();    
-    });  
-  });  
-
-/*    afterEach(function(done){    
+      subscriber.register({nick:'nick',email:'test@test.com'}, function(doc){      
+        currentSubscriber = doc;      
+        done();    
+      });  
+    });
+    afterEach(function(done){    
       subscriber.model.remove({}, function() {      
         done();    
       });  
-    });*/
-
+    });
+    
     it("registers a new subscriber", function(done){    
       subscriber.register({nick : 'nick2', email : "test2@test.com"}, function(doc){      
         doc.email.should.equal('test2@test.com');      
         doc.nick.should.equal('nick2');
+        done();    
+      }); 
+    });
+  });
+  
+  describe('find', function () {
+    var currentSubscriber = null;  
+    beforeEach(function(done){    
+      subscriber.model.create({nick:'nick',email:'test@test.com',campaigns : [{campaignId : 'campaignId1'}]}, function(doc){      
+        subscriber.model.create({nick:'nick2',email:'test2@test.com',campaigns : [{campaignId : 'campaignId2'}]}, function(doc){       
+         done();    
+       });
+      });  
+    });  
+    afterEach(function(done){    
+      subscriber.model.remove({}, function() {      
+        done();    
+      });  
+    });
+    it("find subscribers not whom campaign was not sent", function(done){    
+      subscriber.findAllSubscribersWhereSourceAndToWhomCampaignWasNotSent({campaignId : "campaignId1"}, function(err,docs){
+        should.not.exist(err);
+        (docs.length).should.equal(1);
+        (docs[0].email).should.equal('test2@test.com');
         done();    
       }); 
     });
