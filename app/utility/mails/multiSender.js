@@ -31,7 +31,7 @@ var multiSender = function(senders) {
 		},
 		getSenderStatus : function() {
 			return _senders.map(function(item) {
-				return item.status;
+				return item.status();
 			});
 		}
 	}
