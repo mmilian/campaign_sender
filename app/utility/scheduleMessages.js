@@ -10,13 +10,15 @@ var scheduleMessages = {
 			if (err) {	
 				cb(err);
 				return;
-			}
-			var parameter = {};
-			if (data.source) {
-				parameter = {source : data.source};
-			}
-			parameter.campaignId = data.campaignId;
-			Subscriber.findAllSubscribersWhereSourceAndToWhomCampaignWasNotSent(parameter,function(err, subscribers) {
+			}						
+			var _extractQueryParams = function(data) {
+				var parameter = {};
+				parameter.campaignId = data.campaignId;
+				if (data.source) {
+					parameter = {source : data.source};
+				}
+			};
+			Subscriber.findAllSubscribersWhereSourceAndToWhomCampaignWasNotSent(_extractQueryParams(data),function(err, subscribers) {
 				var messages = [];
 				_.each(subscribers, function(subscriber) { 
 					messages.push(new ScheduledMessage({
@@ -38,7 +40,7 @@ var scheduleMessages = {
 				});
 			});
 		});
-	}
+	}	
 };
 
 module.exports = scheduleMessages;

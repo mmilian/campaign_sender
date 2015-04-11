@@ -4,34 +4,6 @@
 		"selected_items":
 		[
 			[
-				"subs",
-				"subscribers"
-			],
-			[
-				"pa",
-				"parameters"
-			],
-			[
-				"ca",
-				"campaignId"
-			],
-			[
-				"camp",
-				"campaignId"
-			],
-			[
-				"cam",
-				"campaignId"
-			],
-			[
-				"su",
-				"subscribers"
-			],
-			[
-				"se",
-				"senderId"
-			],
-			[
 				"s",
 				"source"
 			],
@@ -85,6 +57,10 @@
 			],
 			[
 				"send",
+				"sendMessages"
+			],
+			[
+				"se",
 				"sendMessages"
 			],
 			[
@@ -178,6 +154,18 @@
 			[
 				"desc",
 				"desc	describe"
+			],
+			[
+				"su",
+				"subscriber"
+			],
+			[
+				"cam",
+				"campaign"
+			],
+			[
+				"ca",
+				"campaignId"
 			],
 			[
 				"campa",
@@ -321,15 +309,154 @@
 			]
 		]
 	},
+	"buffers":
+	[
+		{
+			"contents": "[{\"user\": \"mateusz.milian@gmail.com\", \"clientId\": \"180993338448-96sjne8lc63d4n44j42qn9i1qilk5ina.apps.googleusercontent.com\", \"clientSecret\": \"PLCcl3tGwwtyaunFvIlpOmTV\", \"refreshToken\": \"1/NVsdC0zBmXLXIY4xuuNLzwBdsWKKnc1XRp2os75tn_oMEudVrK5jSpoR30zcRFq6\", \"accessToken\": \"ya29.6gAvED5y8Re9cPvAM9zLpgqK_04WanPGcHG4OCINrqjb5d5r3SVLQgMLNFHNUTUoPqvaAHPaoRJ4uA\"},{\"user\": \"kontakt@efektjow.pl\", \"clientId\": \"994312918864-bjdfhilq6vb2rugh3p8qc650bs43f0ge.apps.googleusercontent.com\", \"clientSecret\": \"lPv8nsq9owI6zbGws7BHeOnZ\", \"refreshToken\": \"1/uZhORBWiWPRVBg6GDb-499xkz1zFdN-4_QsRxLZ6b5U\", \"accessToken\": \"ya29.JwHz7laQjrIhDnkTBpxxQaVwKVO8brgIRIIv1gmEQifjB08zkYhh6D8GShbzbyAPKmLm6N5spYohfg\"}]\n'[\n    {\n        \"user\": \"mateusz.milian@gmail.com\",\n        \"clientId\": \"180993338448-96sjne8lc63d4n44j42qn9i1qilk5ina.apps.googleusercontent.com\",\n        \"clientSecret\": \"PLCcl3tGwwtyaunFvIlpOmTV\",\n        \"refreshToken\": \"1/NVsdC0zBmXLXIY4xuuNLzwBdsWKKnc1XRp2os75tn_oMEudVrK5jSpoR30zcRFq6\",\n        \"accessToken\": \"ya29.6gAvED5y8Re9cPvAM9zLpgqK_04WanPGcHG4OCINrqjb5d5r3SVLQgMLNFHNUTUoPqvaAHPaoRJ4uA\"\n    }\n]';\n\n'[\n    {\n        \"user\": \"kontakt@efektjow.pl\",\n        \"clientId\": \"994312918864-bjdfhilq6vb2rugh3p8qc650bs43f0ge.apps.googleusercontent.com\",\n        \"clientSecret\": \"lPv8nsq9owI6zbGws7BHeOnZ\",\n        \"refreshToken\": \"1/uZhORBWiWPRVBg6GDb-499xkz1zFdN-4_QsRxLZ6b5U\",\n        \"accessToken\": \"ya29.JwHz7laQjrIhDnkTBpxxQaVwKVO8brgIRIIv1gmEQifjB08zkYhh6D8GShbzbyAPKmLm6N5spYohfg\"\n    }\n]';\n\n{\"user\": \"kontakt@efektjow.pl\", \"clientId\": \"994312918864-bjdfhilq6vb2rugh3p8qc650bs43f0ge.apps.googleusercontent.com\", \"clientSecret\": \"lPv8nsq9owI6zbGws7BHeOnZ\", \"refreshToken\": \"1/uZhORBWiWPRVBg6GDb-499xkz1zFdN-4_QsRxLZ6b5U\", \"accessToken\": \"ya29.JwHz7laQjrIhDnkTBpxxQaVwKVO8brgIRIIv1gmEQifjB08zkYhh6D8GShbzbyAPKmLm6N5spYohfg\"}\n\nkontakt@efektjow.pl\n{\"web\":{\"auth_uri\":\"https://accounts.google.com/o/oauth2/auth\",\n\"client_secret\":\"lPv8nsq9owI6zbGws7BHeOnZ\",\n\"token_uri\":\"https://accounts.google.com/o/oauth2/token\",\n\"client_email\":\"994312918864-bjdfhilq6vb2rugh3p8qc650bs43f0ge@developer.gserviceaccount.com\",\n\"redirect_uris\":[\"https://developers.google.com/oauthplayground\"],\n\"client_x509_cert_url\":\"https://www.googleapis.com/robot/v1/metadata/x509/994312918864-bjdfhilq6vb2rugh3p8qc650bs43f0ge@developer.gserviceaccount.com\",\n\"client_id\":\"994312918864-bjdfhilq6vb2rugh3p8qc650bs43f0ge.apps.googleusercontent.com\",\n\"auth_provider_x509_cert_url\":\"https://www.googleapis.com/oauth2/v1/certs\"}}\n\nAuth code: 4/n1T4o22lHiZROS5rYMDsZDhX52c6m-kMjSn9_vqcYGA.8qtOjOzhRBEWrjMoGjtSfTq65cCZlwI\nRefresh token: 1/uZhORBWiWPRVBg6GDb-499xkz1zFdN-4_QsRxLZ6b5U\n\n{\n  \"access_token\": \"ya29.JwHz7laQjrIhDnkTBpxxQaVwKVO8brgIRIIv1gmEQifjB08zkYhh6D8GShbzbyAPKmLm6N5spYohfg\", \n  \"token_type\": \"Bearer\", \n  \"expires_in\": 3600, \n  \"refresh_token\": \"1/uZhORBWiWPRVBg6GDb-499xkz1zFdN-4_QsRxLZ6b5U\"\n}\n\nspolecznosc@efektjow.pl\n{\"web\":{\"auth_uri\":\"https://accounts.google.com/o/oauth2/auth\",\n\"client_secret\":\"ODLQg4QHpn7EFG6GpTPGaWBr\",\n\"token_uri\":\"https://accounts.google.com/o/oauth2/token\",\n\"client_email\":\"1060290956721-7q5nup8h7bun9ufgd5rc9uri3q56vr49@developer.gserviceaccount.com\",\n\"redirect_uris\":[\"https://developers.google.com/oauthplayground\"],\n\"client_x509_cert_url\":\"https://www.googleapis.com/robot/v1/metadata/x509/1060290956721-7q5nup8h7bun9ufgd5rc9uri3q56vr49@developer.gserviceaccount.com\",\n\"client_id\":\"1060290956721-7q5nup8h7bun9ufgd5rc9uri3q56vr49.apps.googleusercontent.com\",\n\"auth_provider_x509_cert_url\":\"https://www.googleapis.com/oauth2/v1/certs\",\n\"javascript_origins\":[\"https://www.example.com\"]}}\n\n{\n  \"access_token\": \"ya29.KAFOxmExbVUkj8_Boca1FDly9S6d58DbGg1WWf_yfsqpV8L1zaNG9rxxdBgoz67PIkjluM9qxKAr8A\", \n  \"token_type\": \"Bearer\", \n  \"expires_in\": 3600, \n  \"refresh_token\": \"1/FQhbOeMqE3h_65bsQi8KoDUn2J4GEMNIuZqud60QYLt90RDknAdJa_sgfheVM0XT\"\n}\n\ninfo@efektjow.pl\n\n{\"user\": \"info@efektjow.pl\",\"name\":\"Spolecznosc efekjow.pl <info@efektjow.pl>\", \"limit\":\"1\", \"clientId\": \"794405683554-aedfgu5l9b06cqkqt74bepkqa3q7o4r6.apps.googleusercontent.com\", \"clientSecret\": \"yEjieXHkwESP5HyviaZglET8\", \"refreshToken\": \"1/Y4eeXTOivwIY9WLAWG-HzOH_dCQaNJG24tWBsdkj3f4MEudVrK5jSpoR30zcRFq6\", \"accessToken\": \"ya29.KAEjjKMQSPms2KRxKF6qKC-Wkq_USTQeHcneMAkjbzxsL-epVWX3Xt4JbK4TRQoScmjifzTLIOa4Ag\"}\n{\n  \"access_token\": \"ya29.KAEjjKMQSPms2KRxKF6qKC-Wkq_USTQeHcneMAkjbzxsL-epVWX3Xt4JbK4TRQoScmjifzTLIOa4Ag\", \n  \"token_type\": \"Bearer\", \n  \"expires_in\": 3600, \n  \"refresh_token\": \"1/Y4eeXTOivwIY9WLAWG-HzOH_dCQaNJG24tWBsdkj3f4MEudVrK5jSpoR30zcRFq6\"\n}\n\n{\"web\":{\"auth_uri\":\"https://accounts.google.com/o/oauth2/auth\"\n\"client_secret\":\"yEjieXHkwESP5HyviaZglET8\"\n\"token_uri\":\"https://accounts.google.com/o/oauth2/token\"\n\"client_email\":\"794405683554-aedfgu5l9b06cqkqt74bepkqa3q7o4r6@developer.gserviceaccount.com\"\n\"redirect_uris\":[\"https://developers.google.com/oauthplayground\"]\n\"client_x509_cert_url\":\"https://www.googleapis.com/robot/v1/metadata/x509/794405683554-aedfgu5l9b06cqkqt74bepkqa3q7o4r6@developer.gserviceaccount.com\"\n\"client_id\":\"794405683554-aedfgu5l9b06cqkqt74bepkqa3q7o4r6.apps.googleusercontent.com\"\n\"auth_provider_x509_cert_url\":\"https://www.googleapis.com/oauth2/v1/certs\",\n\"javascript_origins\":[\"https://www.example.com\"]}}",
+			"file": "scripts/GMAIL_CREDENTIALS.json",
+			"file_size": 2909,
+			"file_write_time": 130695454122061046,
+			"settings":
+			{
+				"buffer_size": 5207,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/bpl4605/Downloads/client_secret_1060290956721-7q5nup8h7bun9ufgd5rc9uri3q56vr49.apps.googleusercontent.com.json",
+			"settings":
+			{
+				"buffer_size": 688,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "scripts/tests/setUpEnv.bat",
+			"settings":
+			{
+				"buffer_size": 1705,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/utility/scheduleMessages.js",
+			"settings":
+			{
+				"buffer_size": 1355,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "config/env/test.js",
+			"settings":
+			{
+				"buffer_size": 330,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "config/env/production.js",
+			"settings":
+			{
+				"buffer_size": 396,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Tools/Sublime3/Data/Packages/JSHint Gutter/.jshintrc",
+			"settings":
+			{
+				"buffer_size": 622,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/utility/mails/senderController.js",
+			"settings":
+			{
+				"buffer_size": 1375,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/utility/mails/multiSender.js",
+			"settings":
+			{
+				"buffer_size": 835,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "config/gmailSenders.js",
+			"settings":
+			{
+				"buffer_size": 1220,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "test.html",
+			"settings":
+			{
+				"buffer_size": 2712,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/bpl4605/.grails/ProxySettings.groovy",
+			"settings":
+			{
+				"buffer_size": 174,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/models/redirectingTable.js",
+			"settings":
+			{
+				"buffer_size": 978,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/models/sentMailLogEvent.js",
+			"settings":
+			{
+				"buffer_size": 1071,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/bpl4605/.babunrc",
+			"settings":
+			{
+				"buffer_size": 2192,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/utility/sendService.js",
+			"settings":
+			{
+				"buffer_size": 1205,
+				"line_ending": "Windows"
+			}
+		}
+	],
 	"build_system": "Packages/User/mocha.sublime-build",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
 	"command_palette":
 	{
 		"height": 392.0,
+		"last_filter": "",
 		"selected_items":
 		[
 			[
 				"js",
-				"JSHint"
+				"JSHint: Set Linting Preferences"
 			],
 			[
 				"gi",
@@ -476,7 +603,7 @@
 				"Set Syntax: Go"
 			]
 		],
-		"width": 416.0
+		"width": 400.0
 	},
 	"console":
 	{
@@ -499,48 +626,55 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
+	"expanded_folders":
+	[
+		"/C/git-views/efektjow/mails/campaign_sender",
+		"/C/git-views/efektjow/mails/campaign_sender/app",
+		"/C/git-views/efektjow/mails/campaign_sender/app/controllers",
+		"/C/git-views/efektjow/mails/campaign_sender/app/models",
+		"/C/git-views/efektjow/mails/campaign_sender/config",
+		"/C/git-views/efektjow/mails/campaign_sender/config/env",
+		"/C/git-views/efektjow/mails/campaign_sender/scripts",
+		"/C/git-views/efektjow/mails/campaign_sender/scripts/tests"
+	],
 	"file_history":
 	[
-		"/c/Tools/console/vendor/Sublime3/Data/Packages/JSHint Gutter/JSHint.sublime-settings",
-		"/C/git-views/efektjow/mails/campaign_sender/node_modules/body-parser/lib/types/json.js",
-		"/C/git-views/efektjow/mails/campaign_sender/server.js",
-		"/C/git-views/efektjow/mails/campaign_sender/node_modules/events/tests/subclass.js",
-		"/C/git-views/efektjow/mails/campaign_sender/app/test/subscriebersTest.js",
-		"/C/git-views/efektjow/mails/campaign_sender/app/models/scheduledMessage.js",
-		"/C/git-views/efektjow/mails/campaign_sender/app/utility/scheduleMessages.js",
-		"/C/git-views/efektjow/mails/campaign_sender/config/env/production.js",
+		"/C/Users/bpl4605/.babun/.babunrc",
+		"/C/Users/bpl4605/.babun/cygwin/home/bpl4605/.zshrc",
+		"/C/Users/bpl4605/.babun/cygwin/home/bpl4605/.babunrc",
+		"/C/git-views/vospcq/repo/VospCq/vospcq-gen-enums/build.gradle",
+		"/C/git-views/vospcq/repo/vospCqJmsTests/build.gradle",
 		"/C/git-views/efektjow/mails/campaign_sender/package.json",
-		"/C/git-views/efektjow/mails/campaign_sender/config/sendingMailsJob.js",
-		"/C/git-views/efektjow/mails/campaign_sender/app/test/sentMailLogEventTest.js",
-		"/C/git-views/efektjow/mails/campaign_sender/app/models/sentMailLogEvent.js",
-		"/C/git-views/efektjow/mails/campaign_sender/app/test/campaignModelTest.js",
-		"/C/git-views/efektjow/mails/campaign_sender/app/controllers/sendCampaign.js",
-		"/C/git-views/efektjow/mails/campaign_sender/config/config.js",
-		"/C/git-views/efektjow/mails/campaign_sender/app/utility/mails/senderController.js",
-		"/C/git-views/efektjow/mails/campaign_sender/app/utility/mails/multiSender.js",
-		"/C/git-views/efektjow/mails/campaign_sender/config/gmailSenders.js",
 		"/C/Users/bpl4605/zmieleni.json",
 		"/C/Program Files/MongoDB 2.6 Standard/bin/dump/zmieleni.json",
 		"/C/git-views/efektjow/mails/campaign_sender/Procfile",
+		"/C/git-views/efektjow/mails/campaign_sender/config/sendingMailsJob.js",
+		"/C/git-views/efektjow/mails/campaign_sender/app/test/sentMailLogEventTest.js",
+		"/C/git-views/efektjow/mails/campaign_sender/app/models/sentMailLogEvent.js",
+		"/C/git-views/efektjow/mails/campaign_sender/server.js",
 		"/C/Users/bpl4605/Downloads/client_secret_794405683554-aedfgu5l9b06cqkqt74bepkqa3q7o4r6.apps.googleusercontent.com.json",
 		"/C/Users/bpl4605/Downloads/client_secret_994312918864-bjdfhilq6vb2rugh3p8qc650bs43f0ge.apps.googleusercontent.com.json",
+		"/C/git-views/efektjow/mails/campaign_sender/app/utility/mails/multiSender.js",
 		"/C/git-views/efektjow/mails/campaign_sender/app/utility/mailStatisticWraper.js",
 		"/C/git-views/efektjow/mails/campaign_sender/todo.md",
 		"/C/git-views/efektjow/mails/campaign_sender/app/test/scheduledMessageTest.js",
+		"/C/git-views/efektjow/mails/campaign_sender/app/utility/scheduleMessages.js",
 		"//segotx623/got623v002$/segot2ardhn010/vosp-cq/VLDGOT02_NODE02_VOSP-CQ/serverlogs/SystemErr.log",
 		"//segotx623/got623v002$/segot2ardhn010/vosp-cq/INTGOT10_NODE01_VOSP-CQ/serverlogs/SystemErr.log",
 		"//segotx623/got623v002$/segot2ardhn010/vosp-cq/INTGOT10_NODE01_VOSP-CQ/serverlogs/SystemOut.log",
 		"/C/git-views/vospcq/repo/VospCq/vospcq-workflow/pom.xml",
-		"/C/Users/bpl4605/.babun/cygwin/home/bpl4605/.babunrc",
 		"/C/git-views/efektjow/mails/campaign_sender/config/env/development.js",
 		"/C/git-views/efektjow/mails/campaign_sender/config/env/test.js",
 		"/C/git-views/efektjow/mails/campaign_sender/scripts/GMAIL_CREDENTIALS.json",
+		"/C/git-views/efektjow/mails/campaign_sender/app/utility/mails/senderController.js",
 		"/C/git-views/efektjow/mails/campaign_sender/app/utility/emailStatistic.js",
 		"/C/git-views/efektjow/mails/campaign_sender/app/utility/sendManager.js",
 		"/C/git-views/efektjow/mails/campaign_sender/app/utility/sendService.js",
+		"/C/git-views/efektjow/mails/campaign_sender/app/controllers/sendCampaign.js",
 		"/C/git-views/efektjow/mails/campaign_sender/app/sendManager.js",
 		"/C/git-views/efektjow/mails/campaign_sender/app/test/sendManagerTest.js",
 		"/C/git-views/efektjow/mails/campaign_sender/app/models/subscriber.js",
+		"/C/git-views/efektjow/mails/campaign_sender/app/models/scheduledMessage.js",
 		"//segotx623/got623v002$/segot2ardhn010/vosp-cq/VLDGOT02_NODE02_VOSP-CQ/logs/vss.log",
 		"//segotx623/got623v002$/segot2ardhn010/vosp-cq/VLDGOT02_NODE02_VOSP-CQ/logs/jms.log",
 		"/C/Users/bpl4605/Desktop/Efekt_JOW_e_mailing/test.html",
@@ -550,6 +684,7 @@
 		"/C/git-views/efektjow/mails/campaign_sender/node_modules/rewire/test/testModules/emptyModule.js",
 		"/C/git-views/efektjow/mails/campaign_sender/config/express.js",
 		"/C/git-views/efektjow/mails/campaign_sender/node_modules/rewire/test/testModules/moduleA.js",
+		"/C/git-views/efektjow/mails/campaign_sender/config/gmailSenders.js",
 		"/C/git-views/efektjow/mails/campaign_sender/app/test/config/gmailSenderTests.js",
 		"/C/git-views/efektjow/mails/campaign_sender/node_modules/rewire/test/testModules/throwError.js",
 		"/C/git-views/efektjow/mails/campaign_sender/node_modules/cheerio/node_modules/htmlparser2/node_modules/domhandler/test/cases/14-comment_in_text_in_script.json",
@@ -562,6 +697,7 @@
 		"/C/git-views/efektjow/mails/campaign_sender/app/models/redirectingTable.js",
 		"/C/git-views/efektjow/mails/campaign_sender/app/models/campaign.js",
 		"/C/git-views/efektjow/mails/campaign_sender/campaign_sender.sublime-project",
+		"/C/git-views/efektjow/mails/campaign_sender/config/config.js",
 		"/C/git-views/vospcq/repo/vospCqLocalDb/src/main/sql/data/vospcq/TRANSLATION_TEXT/TRANSLATION_TEXT.sql",
 		"/C/Tools/Sublime3/Data/Packages/User/Default (Windows).sublime-keymap",
 		"/C/Tools/Sublime3/Data/Packages/User/Preferences.sublime-settings",
@@ -623,23 +759,24 @@
 		"/C/git-views/vospcq/repo/dragDropAngJsAndGridster/dragdropAngJsAndGridster/.bowerrc",
 		"/C/git-views/vospcq/repo/vospCqJmsTests/connectionTester/src/main/java/SimplePTP.java",
 		"/C/git-views/efektjow/mails/campaign_sender/app/emailStatistic.js",
+		"/C/git-views/efektjow/mails/campaign_sender/app/test/campaignModelTest.js",
 		"/C/git-views/efektjow/mails/campaign_sender/node_modules/connect-mongo/lib/connect-mongo.js",
 		"/C/git-views/efektjow/mails/campaign_sender/node_modules/mongoose/examples/express/connection-sharing/modelA.js",
 		"/C/git-views/efektjow/mails/campaign_sender/config/env/all.js",
 		"/C/git-views/efektjow/mails/campaign_sender/app/sendService.js",
 		"/C/git-views/efektjow/mails/campaign_sender/app/test/mailStatisticWraperTest.js",
-		"/C/git-views/efektjow/mails/campaign_sender/app/scheduleMessages.js"
+		"/C/git-views/efektjow/mails/campaign_sender/app/scheduleMessages.js",
+		"/C/git-views/efektjow/mails/campaign_sender/app/routes/redirectingUrls.js"
 	],
 	"find":
 	{
-		"height": 39.0
+		"height": 23.0
 	},
 	"find_in_files":
 	{
 		"height": 169.0,
 		"where_history":
 		[
-			"C:\\git-views\\efektjow\\mails\\campaign_sender",
 			"",
 			"C:\\svn-views\\VOSP\\branch\\37",
 			"C:\\svn-views\\VOSP\\trunk\\VospCq",
@@ -651,14 +788,6 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"not.ex",
-			"should.not.exist(err)",
-			"console",
-			"_sentPerDay",
-			"_sentPerDay ",
-			"_sentPerDay",
-			"models/Campaign",
-			"Campaign",
 			",",
 			"{\"web\":{\"auth_uri\":\"https://accounts.google.com/o/oauth2/auth\",\"client_secret\":\"yEjieXHkwESP5HyviaZglET8\",\"token_uri\":\"https://accounts.google.com/o/oauth2/token\",\"client_email\":\"794405683554-aedfgu5l9b06cqkqt74bepkqa3q7o4r6@developer.gserviceaccount.com\",\"redirect_uris\":[\"https://developers.google.com/oauthplayground\"],\"client_x509_cert_url\":\"https://www.googleapis.com/robot/v1/metadata/x509/794405683554-aedfgu5l9b06cqkqt74bepkqa3q7o4r6@developer.gserviceaccount.com\",\"client_id\":\"794405683554-aedfgu5l9b06cqkqt74bepkqa3q7o4r6.apps.googleusercontent.com\",\n",
 			"item",
@@ -778,7 +907,15 @@
 			"DIRECT_PAYMENT",
 			"market",
 			"]?",
-			"findOccurenceOfTextInFile"
+			"findOccurenceOfTextInFile",
+			"findOccurenceOfTextInFile()",
+			"findOccurenceOfTexts",
+			"findOccurenceOfText",
+			"map",
+			"languageColumn",
+			"columns",
+			"column",
+			"getColumn"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -807,9 +944,480 @@
 		"whole_word": false,
 		"wrap": true
 	},
+	"groups":
+	[
+		{
+			"selected": 14,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "scripts/GMAIL_CREDENTIALS.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5207,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3859,
+								4271
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Better JavaScript/JSON.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1117.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/C/Users/bpl4605/Downloads/client_secret_1060290956721-7q5nup8h7bun9ufgd5rc9uri3q56vr49.apps.googleusercontent.com.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 688,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								688
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Better JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": 6413.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "scripts/tests/setUpEnv.bat",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1705,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								22,
+								1684
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Batch File/Batch File.tmLanguage"
+						},
+						"translation.x": 11857.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/utility/scheduleMessages.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1355,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Better JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 296.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 14,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "config/env/test.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 330,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								235,
+								258
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Better JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "config/env/production.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 396,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								311,
+								311
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Better JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/C/Tools/Sublime3/Data/Packages/JSHint Gutter/.jshintrc",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 622,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								491,
+								622
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 138.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "app/utility/mails/senderController.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1375,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Better JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"word_separators": "./\\\\()\\\"\\'-:,.;<>~!@#%^&*|+=[]{}`~?"
+						},
+						"translation.x": 0.0,
+						"translation.y": 480.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "app/utility/mails/multiSender.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 835,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Better JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "config/gmailSenders.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1220,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								913,
+								913
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Better JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"word_separators": "./\\\\()\\\"\\'-:,.;<>~!@#%^&*|+=[]{}`~?"
+						},
+						"translation.x": 0.0,
+						"translation.y": 59.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "test.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2712,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 586.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "/C/Users/bpl4605/.grails/ProxySettings.groovy",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 174,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								174,
+								174
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Groovy/Groovy.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "app/models/redirectingTable.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 978,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Better JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "app/models/sentMailLogEvent.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1071,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Better JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 80.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "/C/Users/bpl4605/.babunrc",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2192,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 276.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "app/utility/sendService.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1205,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								428,
+								428
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Better JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 174.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 15,
+					"type": "text"
+				}
+			]
+		}
+	],
 	"incremental_find":
 	{
-		"height": 31.0
+		"height": 23.0
 	},
 	"input":
 	{
@@ -850,72 +1458,19 @@
 	{
 		"height": 148.0
 	},
+	"pinned_build_system": "",
+	"project": "campaign_sender.sublime-project",
 	"replace":
 	{
-		"height": 72.0
+		"height": 42.0
 	},
 	"save_all_on_build": true,
 	"select_file":
 	{
 		"height": 0.0,
+		"last_filter": "",
 		"selected_items":
 		[
-			[
-				"subsc",
-				"app\\models\\subscriber.js"
-			],
-			[
-				"s",
-				"app\\models\\subscriber.js"
-			],
-			[
-				"subscrib",
-				"app\\models\\subscriber.js"
-			],
-			[
-				"sched",
-				"app\\utility\\scheduleMessages.js"
-			],
-			[
-				"gma",
-				"config\\gmailSenders.js"
-			],
-			[
-				"pro",
-				"config\\env\\production.js"
-			],
-			[
-				"sendercon",
-				"app\\utility\\mails\\senderController.js"
-			],
-			[
-				"mul",
-				"app\\utility\\mails\\multiSender.js"
-			],
-			[
-				"co",
-				"config\\config.js"
-			],
-			[
-				"schedu",
-				"app\\utility\\scheduleMessages.js"
-			],
-			[
-				"scheduledme",
-				"app\\models\\scheduledMessage.js"
-			],
-			[
-				"",
-				"app\\models\\campaign.js"
-			],
-			[
-				"camp",
-				"app\\models\\campaign.js"
-			],
-			[
-				"schedule",
-				"app\\test\\scheduleMessagesTest.js"
-			],
 			[
 				"pa",
 				"package.json"
@@ -933,12 +1488,24 @@
 				"config\\gmailSenders.js"
 			],
 			[
+				"mul",
+				"app\\utility\\mails\\multiSender.js"
+			],
+			[
+				"gma",
+				"config\\gmailSenders.js"
+			],
+			[
 				"test",
 				"config\\env\\test.js"
 			],
 			[
 				"sendse",
 				"app\\utility\\sendService.js"
+			],
+			[
+				"schedu",
+				"app\\utility\\scheduleMessages.js"
 			],
 			[
 				"sentmail",
@@ -963,6 +1530,10 @@
 			[
 				"mail",
 				"app\\utility\\mailStatisticWraper.js"
+			],
+			[
+				"",
+				"config\\env\\test.js"
 			],
 			[
 				"dev",
@@ -997,6 +1568,10 @@
 				"app\\models\\sentMailEventLog.js"
 			],
 			[
+				"sendercon",
+				"app\\utility\\mails\\senderController.js"
+			],
+			[
 				"mult",
 				"app\\utility\\mails\\multiSender.js"
 			],
@@ -1013,8 +1588,16 @@
 				"app\\emailStatistic.js"
 			],
 			[
+				"camp",
+				"app\\controllers\\sendCampaign.js"
+			],
+			[
 				"wrap",
 				"app\\mailStatisticWraper.js"
+			],
+			[
+				"schedule",
+				"app\\scheduleMessages.js"
 			],
 			[
 				"red",
@@ -1035,6 +1618,10 @@
 			[
 				"redirectingt",
 				"app\\models\\redirectingTable.js"
+			],
+			[
+				"sched",
+				"app\\scheduleMessages.js"
 			],
 			[
 				"scheduled",
@@ -1135,6 +1722,14 @@
 			[
 				"sendme",
 				"test\\sendMessagesTest.js"
+			],
+			[
+				"co",
+				"config-test.js"
+			],
+			[
+				"s",
+				"models\\subscriber.js"
 			],
 			[
 				"em",
@@ -1258,6 +1853,7 @@
 	"select_project":
 	{
 		"height": 500.0,
+		"last_filter": "",
 		"selected_items":
 		[
 		],
@@ -1266,11 +1862,13 @@
 	"select_symbol":
 	{
 		"height": 0.0,
+		"last_filter": "",
 		"selected_items":
 		[
 		],
 		"width": 0.0
 	},
+	"selected_group": 0,
 	"settings":
 	{
 	},
